@@ -1,0 +1,1381 @@
+[gd_scene load_steps=279 format=3 uid="uid://dosxxdu6vitt7"]
+
+[ext_resource type="Script" path="res://scripts/Unit.gd" id="1_b2d1e"]
+[ext_resource type="Texture2D" uid="uid://bqveecp4b6gus" path="res://assets/user interface/highlight/highlight_yellow.png" id="2_s73kd"]
+[ext_resource type="Texture2D" uid="uid://berghfkkb8b5y" path="res://assets/playable character/knight/knight_default_idle/E/knight_default_idle_E_0.0_0.png" id="2_suejk"]
+[ext_resource type="Texture2D" uid="uid://bg03v505iyk1b" path="res://assets/playable character/knight/knight_armed_attack/N/knight_armed_attack_N_90.0_0.png" id="3_u5me8"]
+[ext_resource type="Texture2D" uid="uid://8m3xjiqqq7ba" path="res://assets/playable character/knight/knight_default_idle/N/knight_default_idle_N_90.0_0.png" id="3_ukgr7"]
+[ext_resource type="Texture2D" uid="uid://bc72xcx101ets" path="res://assets/playable character/knight/knight_armed_attack/N/knight_armed_attack_N_90.0_1.png" id="4_bxp50"]
+[ext_resource type="Texture2D" uid="uid://5h1nv7lkr2ed" path="res://assets/playable character/knight/knight_default_idle/NE/knight_default_idle_NE_45.0_0.png" id="4_wdexl"]
+[ext_resource type="Texture2D" uid="uid://hndls82t228p" path="res://assets/playable character/knight/knight_default_idle/NW/knight_default_idle_NW_135.0_0.png" id="5_vnjv6"]
+[ext_resource type="Texture2D" uid="uid://d2byupl2cij66" path="res://assets/playable character/knight/knight_armed_attack/N/knight_armed_attack_N_90.0_2.png" id="5_w3q4u"]
+[ext_resource type="Texture2D" uid="uid://y0sb8sxbtj0e" path="res://assets/playable character/knight/knight_default_idle/NEE/knight_default_idle_NEE_22.5_0.png" id="6_5ry4v"]
+[ext_resource type="Texture2D" uid="uid://bq031ljck6ert" path="res://assets/playable character/knight/knight_armed_attack/N/knight_armed_attack_N_90.0_3.png" id="6_booke"]
+[ext_resource type="Texture2D" uid="uid://cdvarf6k32i1r" path="res://assets/playable character/knight/knight_default_idle/S/knight_default_idle_S_270.0_0.png" id="6_x874w"]
+[ext_resource type="Texture2D" uid="uid://c52hm3yem0mkj" path="res://assets/playable character/knight/knight_armed_attack/N/knight_armed_attack_N_90.0_4.png" id="7_3isnd"]
+[ext_resource type="Texture2D" uid="uid://bruc3joqotv5r" path="res://assets/playable character/knight/knight_default_idle/NNE/knight_default_idle_NNE_67.5_0.png" id="7_phmhp"]
+[ext_resource type="Texture2D" uid="uid://ca3dl6hdn1rmf" path="res://assets/playable character/knight/knight_default_idle/SE/knight_default_idle_SE_315.0_0.png" id="7_yratk"]
+[ext_resource type="Texture2D" uid="uid://8b5hlmtnfyxe" path="res://assets/playable character/knight/knight_default_idle/NNW/knight_default_idle_NNW_112.5_0.png" id="8_lxgr2"]
+[ext_resource type="Texture2D" uid="uid://da0lt18r5lxhx" path="res://assets/playable character/knight/knight_default_idle/SW/knight_default_idle_SW_225.0_0.png" id="8_oryn1"]
+[ext_resource type="Texture2D" uid="uid://whliwt7lc57b" path="res://assets/playable character/knight/knight_armed_attack/N/knight_armed_attack_N_90.0_5.png" id="8_wwf7n"]
+[ext_resource type="Texture2D" uid="uid://b4wmpwkw4c56a" path="res://assets/playable character/knight/knight_default_idle/W/knight_default_idle_W_180.0_0.png" id="9_hxmti"]
+[ext_resource type="Texture2D" uid="uid://5dd201g12xcx" path="res://assets/playable character/knight/knight_armed_attack/N/knight_armed_attack_N_90.0_6.png" id="9_n0ml5"]
+[ext_resource type="Texture2D" uid="uid://cejyawvdghvs4" path="res://assets/playable character/knight/knight_default_idle/NWW/knight_default_idle_NWW_157.5_0.png" id="10_2t23v"]
+[ext_resource type="Texture2D" uid="uid://bed4v8axa8ly3" path="res://assets/playable character/knight/knight_armed_attack/N/knight_armed_attack_N_90.0_7.png" id="10_7wpyb"]
+[ext_resource type="Texture2D" uid="uid://s6wmewbueoj2" path="res://assets/playable character/knight/knight_default_walk/E/knight_default_walk_E_0.0_0.png" id="10_qlx57"]
+[ext_resource type="Texture2D" uid="uid://g3hiqxjd03t3" path="res://assets/playable character/knight/knight_armed_attack/NNE/knight_armed_attack_NNE_67.5_0.png" id="11_ker31"]
+[ext_resource type="Texture2D" uid="uid://yc10ntwybo2c" path="res://assets/playable character/knight/knight_default_walk/E/knight_default_walk_E_0.0_1.png" id="11_ordlw"]
+[ext_resource type="Texture2D" uid="uid://coh2vnp2uvy51" path="res://assets/playable character/knight/knight_armed_attack/NNE/knight_armed_attack_NNE_67.5_1.png" id="12_ndnbf"]
+[ext_resource type="Texture2D" uid="uid://c8g6ypqrhhnmr" path="res://assets/playable character/knight/knight_default_walk/E/knight_default_walk_E_0.0_2.png" id="12_vqd38"]
+[ext_resource type="Texture2D" uid="uid://bap2c5sh0n0s5" path="res://assets/playable character/knight/knight_default_walk/E/knight_default_walk_E_0.0_3.png" id="13_lau38"]
+[ext_resource type="Texture2D" uid="uid://3prxt8xmunh6" path="res://assets/playable character/knight/knight_armed_attack/NNE/knight_armed_attack_NNE_67.5_2.png" id="13_tddc2"]
+[ext_resource type="Texture2D" uid="uid://c2wv5w50og8ix" path="res://assets/playable character/knight/knight_default_idle/SEE/knight_default_idle_SEE_337.5_0.png" id="13_uunx5"]
+[ext_resource type="Texture2D" uid="uid://e3nvjc7fwynm" path="res://assets/playable character/knight/knight_default_walk/E/knight_default_walk_E_0.0_4.png" id="14_m8ywk"]
+[ext_resource type="Texture2D" uid="uid://de2gkex6ni1ow" path="res://assets/playable character/knight/knight_armed_attack/NNE/knight_armed_attack_NNE_67.5_3.png" id="14_uo7sv"]
+[ext_resource type="Texture2D" uid="uid://dnrwrxe4hrxov" path="res://assets/playable character/knight/knight_default_idle/SSE/knight_default_idle_SSE_292.5_0.png" id="14_xlghw"]
+[ext_resource type="Texture2D" uid="uid://d3mj7idwlfjsd" path="res://assets/playable character/knight/knight_armed_attack/NNE/knight_armed_attack_NNE_67.5_4.png" id="15_27yei"]
+[ext_resource type="Texture2D" uid="uid://maev4gq8uhcj" path="res://assets/playable character/knight/knight_default_idle/SSW/knight_default_idle_SSW_247.5_0.png" id="15_o0bge"]
+[ext_resource type="Texture2D" uid="uid://cu2keshbna7j1" path="res://assets/playable character/knight/knight_default_walk/E/knight_default_walk_E_0.0_5.png" id="15_rtps3"]
+[ext_resource type="Texture2D" uid="uid://c5a3y1hirqfps" path="res://assets/playable character/knight/knight_default_walk/E/knight_default_walk_E_0.0_6.png" id="16_6l4pj"]
+[ext_resource type="Texture2D" uid="uid://n04xr6kdfax1" path="res://assets/playable character/knight/knight_armed_attack/NNE/knight_armed_attack_NNE_67.5_5.png" id="16_cndbr"]
+[ext_resource type="Texture2D" uid="uid://b3ji4ifrajqhq" path="res://assets/playable character/knight/knight_default_walk/E/knight_default_walk_E_0.0_7.png" id="17_8t177"]
+[ext_resource type="Texture2D" uid="uid://b87pxh5bqqa46" path="res://assets/playable character/knight/knight_armed_attack/NNE/knight_armed_attack_NNE_67.5_6.png" id="17_emwsn"]
+[ext_resource type="Texture2D" uid="uid://q7jca1g0g31l" path="res://assets/playable character/knight/knight_default_idle/SWW/knight_default_idle_SWW_202.5_0.png" id="17_n1n4h"]
+[ext_resource type="Texture2D" uid="uid://bwqad772y437g" path="res://assets/playable character/knight/knight_default_walk/N/knight_default_walk_N_90.0_0.png" id="18_iokwq"]
+[ext_resource type="Texture2D" uid="uid://fqo8o1o52vxn" path="res://assets/playable character/knight/knight_armed_attack/NNE/knight_armed_attack_NNE_67.5_7.png" id="18_o84r0"]
+[ext_resource type="Texture2D" uid="uid://bq6mn3nlho22a" path="res://assets/playable character/knight/knight_default_walk/N/knight_default_walk_N_90.0_1.png" id="19_b73uf"]
+[ext_resource type="Texture2D" uid="uid://b8n2bndcrn1em" path="res://assets/playable character/knight/knight_armed_attack/SW/knight_armed_attack_SW_225.0_0.png" id="19_xjw1i"]
+[ext_resource type="Texture2D" uid="uid://cjsy0lrgjxr23" path="res://assets/playable character/knight/knight_default_walk/N/knight_default_walk_N_90.0_2.png" id="20_flbbl"]
+[ext_resource type="Texture2D" uid="uid://dv3jkivltygyq" path="res://assets/playable character/knight/knight_armed_attack/SW/knight_armed_attack_SW_225.0_1.png" id="20_oe154"]
+[ext_resource type="Texture2D" uid="uid://dhheuhsotm3i3" path="res://assets/playable character/knight/knight_default_walk/N/knight_default_walk_N_90.0_3.png" id="21_0msq0"]
+[ext_resource type="Texture2D" uid="uid://cxbu0wqfk0r86" path="res://assets/playable character/knight/knight_armed_attack/SW/knight_armed_attack_SW_225.0_2.png" id="21_tkoy2"]
+[ext_resource type="Texture2D" uid="uid://dm0haybej0618" path="res://assets/playable character/knight/knight_default_walk/N/knight_default_walk_N_90.0_4.png" id="22_c2w3k"]
+[ext_resource type="Texture2D" uid="uid://dl40iu4784kw0" path="res://assets/playable character/knight/knight_armed_attack/SW/knight_armed_attack_SW_225.0_3.png" id="22_q7tck"]
+[ext_resource type="Texture2D" uid="uid://ddmnb504a2aaf" path="res://assets/playable character/knight/knight_armed_attack/SW/knight_armed_attack_SW_225.0_4.png" id="23_hbw0p"]
+[ext_resource type="Texture2D" uid="uid://bd3a4nmo31mwd" path="res://assets/playable character/knight/knight_default_walk/N/knight_default_walk_N_90.0_5.png" id="23_igm3f"]
+[ext_resource type="Texture2D" uid="uid://blebx7e157peo" path="res://assets/playable character/knight/knight_default_walk/N/knight_default_walk_N_90.0_6.png" id="24_6beym"]
+[ext_resource type="Texture2D" uid="uid://bp3vkk1cq3g3p" path="res://assets/playable character/knight/knight_armed_attack/SW/knight_armed_attack_SW_225.0_5.png" id="24_mi0u0"]
+[ext_resource type="Texture2D" uid="uid://c8g5nedi5les8" path="res://assets/playable character/knight/knight_armed_attack/SW/knight_armed_attack_SW_225.0_6.png" id="25_nt1r8"]
+[ext_resource type="Texture2D" uid="uid://rfmnv1cyx4al" path="res://assets/playable character/knight/knight_default_walk/N/knight_default_walk_N_90.0_7.png" id="25_wbmco"]
+[ext_resource type="Texture2D" uid="uid://covyp55pcf4bq" path="res://assets/playable character/knight/knight_armed_attack/SW/knight_armed_attack_SW_225.0_7.png" id="26_kcf80"]
+[ext_resource type="Texture2D" uid="uid://rar6268r6hht" path="res://assets/playable character/knight/knight_default_walk/NE/knight_default_walk_NE_45.0_0.png" id="26_w4mn0"]
+[ext_resource type="Texture2D" uid="uid://cfrrj4p5jacbx" path="res://assets/playable character/knight/knight_default_walk/NE/knight_default_walk_NE_45.0_1.png" id="27_a8fak"]
+[ext_resource type="Texture2D" uid="uid://demrb371dgs8d" path="res://assets/playable character/knight/knight_armed_attack/SWW/knight_armed_attack_SWW_202.5_0.png" id="27_dtsnf"]
+[ext_resource type="Texture2D" uid="uid://de8uhwh12udl2" path="res://assets/playable character/knight/knight_default_walk/NE/knight_default_walk_NE_45.0_2.png" id="28_qynn1"]
+[ext_resource type="Texture2D" uid="uid://e06eq2vw8536" path="res://assets/playable character/knight/knight_armed_attack/SWW/knight_armed_attack_SWW_202.5_1.png" id="28_rsdsy"]
+[ext_resource type="Texture2D" uid="uid://b1ydssacn7iyl" path="res://assets/playable character/knight/knight_default_walk/NE/knight_default_walk_NE_45.0_3.png" id="29_ggmi4"]
+[ext_resource type="Texture2D" uid="uid://lf50haibhkaa" path="res://assets/playable character/knight/knight_armed_attack/SWW/knight_armed_attack_SWW_202.5_2.png" id="29_ukm8m"]
+[ext_resource type="Texture2D" uid="uid://4f1xrjvpkrrp" path="res://assets/playable character/knight/knight_default_walk/NE/knight_default_walk_NE_45.0_4.png" id="30_pot4o"]
+[ext_resource type="Texture2D" uid="uid://d0nnoc1jwkj6l" path="res://assets/playable character/knight/knight_armed_attack/SWW/knight_armed_attack_SWW_202.5_3.png" id="30_sti6r"]
+[ext_resource type="Texture2D" uid="uid://djlwbtnpp0mg1" path="res://assets/playable character/knight/knight_armed_attack/SWW/knight_armed_attack_SWW_202.5_4.png" id="31_k1pkm"]
+[ext_resource type="Texture2D" uid="uid://b7k7eddn2mqpg" path="res://assets/playable character/knight/knight_default_walk/NE/knight_default_walk_NE_45.0_5.png" id="31_nf4yx"]
+[ext_resource type="Texture2D" uid="uid://ixy1mnmgebs0" path="res://assets/playable character/knight/knight_armed_attack/SWW/knight_armed_attack_SWW_202.5_5.png" id="32_8nuk3"]
+[ext_resource type="Texture2D" uid="uid://n41joetwdgas" path="res://assets/playable character/knight/knight_default_walk/NE/knight_default_walk_NE_45.0_6.png" id="32_kdqsu"]
+[ext_resource type="Texture2D" uid="uid://d0dhgr0kn8cfw" path="res://assets/playable character/knight/knight_default_walk/NE/knight_default_walk_NE_45.0_7.png" id="33_5wy4c"]
+[ext_resource type="Texture2D" uid="uid://g7fxdmodx6ma" path="res://assets/playable character/knight/knight_armed_attack/SWW/knight_armed_attack_SWW_202.5_6.png" id="33_jteej"]
+[ext_resource type="Texture2D" uid="uid://4fbekjkhxuku" path="res://assets/playable character/knight/knight_default_walk/NW/knight_default_walk_NW_135.0_0.png" id="34_0jy3d"]
+[ext_resource type="Texture2D" uid="uid://ewolucwse7k" path="res://assets/playable character/knight/knight_armed_attack/SWW/knight_armed_attack_SWW_202.5_7.png" id="34_vcg23"]
+[ext_resource type="Texture2D" uid="uid://cdaqobrph2r5x" path="res://assets/playable character/knight/knight_default_walk/NW/knight_default_walk_NW_135.0_1.png" id="35_flibo"]
+[ext_resource type="Texture2D" uid="uid://dl5ii78btlopw" path="res://assets/playable character/knight/knight_armed_attack/W/knight_armed_attack_W_180.0_0.png" id="35_r30ob"]
+[ext_resource type="Texture2D" uid="uid://tktgw8rl0eaf" path="res://assets/playable character/knight/knight_default_walk/NW/knight_default_walk_NW_135.0_2.png" id="36_5828g"]
+[ext_resource type="Texture2D" uid="uid://bv3d7egtyyajl" path="res://assets/playable character/knight/knight_armed_attack/W/knight_armed_attack_W_180.0_1.png" id="36_napuj"]
+[ext_resource type="Texture2D" uid="uid://ct8hvnswkywmk" path="res://assets/playable character/knight/knight_default_walk/NW/knight_default_walk_NW_135.0_3.png" id="37_05tnc"]
+[ext_resource type="Texture2D" uid="uid://bptid1eulk3fr" path="res://assets/playable character/knight/knight_armed_attack/W/knight_armed_attack_W_180.0_2.png" id="37_nl40a"]
+[ext_resource type="Texture2D" uid="uid://22o2dilqwvel" path="res://assets/playable character/knight/knight_armed_attack/W/knight_armed_attack_W_180.0_3.png" id="38_p1ag2"]
+[ext_resource type="Texture2D" uid="uid://cm1jfka074tmq" path="res://assets/playable character/knight/knight_default_walk/NW/knight_default_walk_NW_135.0_4.png" id="38_rbbt4"]
+[ext_resource type="Texture2D" uid="uid://drbj6fbk5x2x8" path="res://assets/playable character/knight/knight_armed_attack/W/knight_armed_attack_W_180.0_4.png" id="39_d862x"]
+[ext_resource type="Texture2D" uid="uid://dcdthp1wwppso" path="res://assets/playable character/knight/knight_default_walk/NW/knight_default_walk_NW_135.0_5.png" id="39_gjhsg"]
+[ext_resource type="Texture2D" uid="uid://c2yshy2jdbb6c" path="res://assets/playable character/knight/knight_default_walk/NW/knight_default_walk_NW_135.0_6.png" id="40_fxsrr"]
+[ext_resource type="Texture2D" uid="uid://ppymagebcxpq" path="res://assets/playable character/knight/knight_armed_attack/W/knight_armed_attack_W_180.0_5.png" id="40_hgehb"]
+[ext_resource type="Texture2D" uid="uid://c26esp72j0w7l" path="res://assets/playable character/knight/knight_default_walk/NW/knight_default_walk_NW_135.0_7.png" id="41_pp8wu"]
+[ext_resource type="Texture2D" uid="uid://caxwx8inopb2s" path="res://assets/playable character/knight/knight_armed_attack/W/knight_armed_attack_W_180.0_6.png" id="41_pvdc7"]
+[ext_resource type="Texture2D" uid="uid://b6y2wyp8xewwy" path="res://assets/playable character/knight/knight_armed_attack/W/knight_armed_attack_W_180.0_7.png" id="42_ah12e"]
+[ext_resource type="Texture2D" uid="uid://bejfwkrlb3qel" path="res://assets/playable character/knight/knight_default_walk/S/knight_default_walk_S_270.0_0.png" id="42_q5fbx"]
+[ext_resource type="Texture2D" uid="uid://b5smnhbclr7u4" path="res://assets/playable character/knight/knight_default_walk/NEE/knight_default_walk_NEE_22.5_0.png" id="43_bfpuh"]
+[ext_resource type="Texture2D" uid="uid://byux3k46oo5ny" path="res://assets/playable character/knight/knight_default_walk/S/knight_default_walk_S_270.0_1.png" id="43_epp33"]
+[ext_resource type="Texture2D" uid="uid://bwat66p7g7jgk" path="res://assets/playable character/knight/knight_armed_attack/NWW/knight_armed_attack_NWW_157.5_0.png" id="43_s04vl"]
+[ext_resource type="Texture2D" uid="uid://bba8uda82ao3o" path="res://assets/playable character/knight/knight_default_walk/S/knight_default_walk_S_270.0_2.png" id="44_0i3pb"]
+[ext_resource type="Texture2D" uid="uid://b860omf4bxjqo" path="res://assets/playable character/knight/knight_armed_attack/NWW/knight_armed_attack_NWW_157.5_1.png" id="44_eis02"]
+[ext_resource type="Texture2D" uid="uid://c67v5w6giqvk1" path="res://assets/playable character/knight/knight_default_walk/NEE/knight_default_walk_NEE_22.5_1.png" id="44_hjrat"]
+[ext_resource type="Texture2D" uid="uid://bk2ib17ufmyhn" path="res://assets/playable character/knight/knight_default_walk/S/knight_default_walk_S_270.0_3.png" id="45_4a4u1"]
+[ext_resource type="Texture2D" uid="uid://ce2q35a3aig7u" path="res://assets/playable character/knight/knight_armed_attack/NWW/knight_armed_attack_NWW_157.5_2.png" id="45_e45ox"]
+[ext_resource type="Texture2D" uid="uid://0nowh6v0svv3" path="res://assets/playable character/knight/knight_default_walk/NEE/knight_default_walk_NEE_22.5_2.png" id="45_twsdx"]
+[ext_resource type="Texture2D" uid="uid://imgaaovxqpnb" path="res://assets/playable character/knight/knight_armed_attack/NWW/knight_armed_attack_NWW_157.5_3.png" id="46_8hddn"]
+[ext_resource type="Texture2D" uid="uid://bsql70oeuib87" path="res://assets/playable character/knight/knight_default_walk/NEE/knight_default_walk_NEE_22.5_3.png" id="46_hs5km"]
+[ext_resource type="Texture2D" uid="uid://cq4d71koexgiy" path="res://assets/playable character/knight/knight_default_walk/S/knight_default_walk_S_270.0_4.png" id="46_nqyjt"]
+[ext_resource type="Texture2D" uid="uid://bke3srwumhxli" path="res://assets/playable character/knight/knight_default_walk/NEE/knight_default_walk_NEE_22.5_4.png" id="47_df4qa"]
+[ext_resource type="Texture2D" uid="uid://c03kn5qyybw51" path="res://assets/playable character/knight/knight_armed_attack/NWW/knight_armed_attack_NWW_157.5_4.png" id="47_hjexq"]
+[ext_resource type="Texture2D" uid="uid://bbmwa78e5l4j4" path="res://assets/playable character/knight/knight_default_walk/S/knight_default_walk_S_270.0_5.png" id="47_y7fyt"]
+[ext_resource type="Texture2D" uid="uid://cynyx44w3h0xy" path="res://assets/playable character/knight/knight_default_walk/S/knight_default_walk_S_270.0_6.png" id="48_iy0iw"]
+[ext_resource type="Texture2D" uid="uid://gwclyncb4dro" path="res://assets/playable character/knight/knight_armed_attack/NWW/knight_armed_attack_NWW_157.5_5.png" id="48_mn56p"]
+[ext_resource type="Texture2D" uid="uid://bfsxama1b5opq" path="res://assets/playable character/knight/knight_default_walk/NEE/knight_default_walk_NEE_22.5_5.png" id="48_yyiho"]
+[ext_resource type="Texture2D" uid="uid://bs41apu174q4g" path="res://assets/playable character/knight/knight_armed_attack/NWW/knight_armed_attack_NWW_157.5_6.png" id="49_80lb4"]
+[ext_resource type="Texture2D" uid="uid://cuewvguorjkki" path="res://assets/playable character/knight/knight_default_walk/S/knight_default_walk_S_270.0_7.png" id="49_b8ddr"]
+[ext_resource type="Texture2D" uid="uid://bdgmlnpk6fwv3" path="res://assets/playable character/knight/knight_default_walk/NEE/knight_default_walk_NEE_22.5_6.png" id="49_j178n"]
+[ext_resource type="Texture2D" uid="uid://dfj86plor4pkc" path="res://assets/playable character/knight/knight_default_walk/NEE/knight_default_walk_NEE_22.5_7.png" id="50_60fq1"]
+[ext_resource type="Texture2D" uid="uid://7oap1hguje6f" path="res://assets/playable character/knight/knight_default_walk/SE/knight_default_walk_SE_315.0_0.png" id="50_orwlh"]
+[ext_resource type="Texture2D" uid="uid://cuba4wqv38m6e" path="res://assets/playable character/knight/knight_armed_attack/NWW/knight_armed_attack_NWW_157.5_7.png" id="50_xumye"]
+[ext_resource type="Texture2D" uid="uid://djltsdgphu1rw" path="res://assets/playable character/knight/knight_armed_attack/NW/knight_armed_attack_NW_135.0_0.png" id="51_5sp0f"]
+[ext_resource type="Texture2D" uid="uid://0vvmcluqclit" path="res://assets/playable character/knight/knight_default_walk/NNE/knight_default_walk_NNE_67.5_0.png" id="51_duecu"]
+[ext_resource type="Texture2D" uid="uid://ps6lrjjo7x3a" path="res://assets/playable character/knight/knight_default_walk/SE/knight_default_walk_SE_315.0_1.png" id="51_ij275"]
+[ext_resource type="Texture2D" uid="uid://dypr73k4ivwn5" path="res://assets/playable character/knight/knight_default_walk/NNE/knight_default_walk_NNE_67.5_1.png" id="52_b471a"]
+[ext_resource type="Texture2D" uid="uid://djelrs0jitk8u" path="res://assets/playable character/knight/knight_armed_attack/NW/knight_armed_attack_NW_135.0_1.png" id="52_ukr5h"]
+[ext_resource type="Texture2D" uid="uid://cim13moi0aea3" path="res://assets/playable character/knight/knight_default_walk/SE/knight_default_walk_SE_315.0_2.png" id="52_vbb1o"]
+[ext_resource type="Texture2D" uid="uid://bpays3f3qo0h1" path="res://assets/playable character/knight/knight_default_walk/NNE/knight_default_walk_NNE_67.5_2.png" id="53_3xfkl"]
+[ext_resource type="Texture2D" uid="uid://dsdeo8sb8cydw" path="res://assets/playable character/knight/knight_armed_attack/NW/knight_armed_attack_NW_135.0_2.png" id="53_4hgt5"]
+[ext_resource type="Texture2D" uid="uid://cf6ijt0ikidw3" path="res://assets/playable character/knight/knight_default_walk/SE/knight_default_walk_SE_315.0_3.png" id="53_dy4sc"]
+[ext_resource type="Texture2D" uid="uid://bn1h60w8v5hnk" path="res://assets/playable character/knight/knight_default_walk/SE/knight_default_walk_SE_315.0_4.png" id="54_6b8f4"]
+[ext_resource type="Texture2D" uid="uid://c45dlf82j8xm1" path="res://assets/playable character/knight/knight_default_walk/NNE/knight_default_walk_NNE_67.5_3.png" id="54_wbxrg"]
+[ext_resource type="Texture2D" uid="uid://d0q0rlmddciu3" path="res://assets/playable character/knight/knight_armed_attack/NW/knight_armed_attack_NW_135.0_3.png" id="54_wh2el"]
+[ext_resource type="Texture2D" uid="uid://bfudqtqimtbje" path="res://assets/playable character/knight/knight_armed_attack/NW/knight_armed_attack_NW_135.0_4.png" id="55_31wdl"]
+[ext_resource type="Texture2D" uid="uid://bnvfq3vre2a3" path="res://assets/playable character/knight/knight_default_walk/NNE/knight_default_walk_NNE_67.5_4.png" id="55_237xn"]
+[ext_resource type="Texture2D" uid="uid://135j6h1x6asn" path="res://assets/playable character/knight/knight_default_walk/SE/knight_default_walk_SE_315.0_5.png" id="55_wslmh"]
+[ext_resource type="Texture2D" uid="uid://datn7jhkuc0ux" path="res://assets/playable character/knight/knight_default_walk/NNE/knight_default_walk_NNE_67.5_5.png" id="56_k6v17"]
+[ext_resource type="Texture2D" uid="uid://l7ryxuq74h50" path="res://assets/playable character/knight/knight_default_walk/SE/knight_default_walk_SE_315.0_6.png" id="56_n8j8f"]
+[ext_resource type="Texture2D" uid="uid://dfcb4mly1uum3" path="res://assets/playable character/knight/knight_armed_attack/NW/knight_armed_attack_NW_135.0_5.png" id="56_ohvhu"]
+[ext_resource type="Texture2D" uid="uid://dbxgwe4b40pwn" path="res://assets/playable character/knight/knight_default_walk/NNE/knight_default_walk_NNE_67.5_6.png" id="57_a02dv"]
+[ext_resource type="Texture2D" uid="uid://dxrguvqg6uklj" path="res://assets/playable character/knight/knight_default_walk/SE/knight_default_walk_SE_315.0_7.png" id="57_gp87s"]
+[ext_resource type="Texture2D" uid="uid://chnlnv6wh0h3e" path="res://assets/playable character/knight/knight_armed_attack/NW/knight_armed_attack_NW_135.0_6.png" id="57_ld7pm"]
+[ext_resource type="Texture2D" uid="uid://bt5001g7jsuoj" path="res://assets/playable character/knight/knight_default_walk/NNE/knight_default_walk_NNE_67.5_7.png" id="58_6p6nl"]
+[ext_resource type="Texture2D" uid="uid://df1t4nv4gsq8u" path="res://assets/playable character/knight/knight_armed_attack/NW/knight_armed_attack_NW_135.0_7.png" id="58_l17cg"]
+[ext_resource type="Texture2D" uid="uid://dgq5f7y4fwfpb" path="res://assets/playable character/knight/knight_default_walk/SW/knight_default_walk_SW_225.0_0.png" id="58_suaxe"]
+[ext_resource type="Texture2D" uid="uid://eeapp3d28ddc" path="res://assets/playable character/knight/knight_default_walk/NNW/knight_default_walk_NNW_112.5_0.png" id="59_55tf8"]
+[ext_resource type="Texture2D" uid="uid://de5onnus5oybf" path="res://assets/playable character/knight/knight_armed_attack/NNW/knight_armed_attack_NNW_112.5_0.png" id="59_o5rva"]
+[ext_resource type="Texture2D" uid="uid://dgfir4jpr3svs" path="res://assets/playable character/knight/knight_default_walk/SW/knight_default_walk_SW_225.0_1.png" id="59_raf0k"]
+[ext_resource type="Texture2D" uid="uid://cv2lgeh72gfs6" path="res://assets/playable character/knight/knight_default_walk/NNW/knight_default_walk_NNW_112.5_1.png" id="60_23rn3"]
+[ext_resource type="Texture2D" uid="uid://cyfp4n3tsq1xj" path="res://assets/playable character/knight/knight_default_walk/SW/knight_default_walk_SW_225.0_2.png" id="60_cjlpx"]
+[ext_resource type="Texture2D" uid="uid://5vtaylnmjpm" path="res://assets/playable character/knight/knight_armed_attack/NNW/knight_armed_attack_NNW_112.5_1.png" id="60_kjgdr"]
+[ext_resource type="Texture2D" uid="uid://cybptkonnxq3" path="res://assets/playable character/knight/knight_default_walk/NNW/knight_default_walk_NNW_112.5_2.png" id="61_fxirg"]
+[ext_resource type="Texture2D" uid="uid://dycch86f1xjwm" path="res://assets/playable character/knight/knight_armed_attack/NNW/knight_armed_attack_NNW_112.5_2.png" id="61_q70qw"]
+[ext_resource type="Texture2D" uid="uid://bhtdqd2cppn1q" path="res://assets/playable character/knight/knight_default_walk/SW/knight_default_walk_SW_225.0_3.png" id="61_xskjo"]
+[ext_resource type="Texture2D" uid="uid://ccjufpq6u047c" path="res://assets/playable character/knight/knight_default_walk/SW/knight_default_walk_SW_225.0_4.png" id="62_2evsd"]
+[ext_resource type="Texture2D" uid="uid://cvnpdxbxd272y" path="res://assets/playable character/knight/knight_armed_attack/NNW/knight_armed_attack_NNW_112.5_3.png" id="62_3g08r"]
+[ext_resource type="Texture2D" uid="uid://vcrgrlchakqk" path="res://assets/playable character/knight/knight_default_walk/NNW/knight_default_walk_NNW_112.5_3.png" id="62_6ln7n"]
+[ext_resource type="Texture2D" uid="uid://nujsw4f7ih4" path="res://assets/playable character/knight/knight_default_walk/NNW/knight_default_walk_NNW_112.5_4.png" id="63_orpmg"]
+[ext_resource type="Texture2D" uid="uid://boygc30gajdyv" path="res://assets/playable character/knight/knight_default_walk/SW/knight_default_walk_SW_225.0_5.png" id="63_ur5up"]
+[ext_resource type="Texture2D" uid="uid://b4h1cu6swss3h" path="res://assets/playable character/knight/knight_armed_attack/NNW/knight_armed_attack_NNW_112.5_4.png" id="63_w2wj2"]
+[ext_resource type="Texture2D" uid="uid://d13ylps6xwly5" path="res://assets/playable character/knight/knight_default_walk/NNW/knight_default_walk_NNW_112.5_5.png" id="64_elfx2"]
+[ext_resource type="Texture2D" uid="uid://f0qathkbhtxt" path="res://assets/playable character/knight/knight_armed_attack/NNW/knight_armed_attack_NNW_112.5_5.png" id="64_kliqh"]
+[ext_resource type="Texture2D" uid="uid://bfruqgmiregt7" path="res://assets/playable character/knight/knight_default_walk/SW/knight_default_walk_SW_225.0_6.png" id="64_y3gwq"]
+[ext_resource type="Texture2D" uid="uid://bodbv2cfp601b" path="res://assets/playable character/knight/knight_default_walk/NNW/knight_default_walk_NNW_112.5_6.png" id="65_jsmij"]
+[ext_resource type="Texture2D" uid="uid://besva1ce44k0c" path="res://assets/playable character/knight/knight_default_walk/SW/knight_default_walk_SW_225.0_7.png" id="65_q5dnq"]
+[ext_resource type="Texture2D" uid="uid://cmlui517lhph8" path="res://assets/playable character/knight/knight_armed_attack/NNW/knight_armed_attack_NNW_112.5_6.png" id="65_qdjv1"]
+[ext_resource type="Texture2D" uid="uid://oxfeg542m016" path="res://assets/playable character/knight/knight_default_walk/W/knight_default_walk_W_180.0_0.png" id="66_dmrvo"]
+[ext_resource type="Texture2D" uid="uid://beujkt14uis2j" path="res://assets/playable character/knight/knight_default_walk/NNW/knight_default_walk_NNW_112.5_7.png" id="66_joa8e"]
+[ext_resource type="Texture2D" uid="uid://ccniwj4n6p23d" path="res://assets/playable character/knight/knight_armed_attack/NNW/knight_armed_attack_NNW_112.5_7.png" id="66_rjqr0"]
+[ext_resource type="Texture2D" uid="uid://uppkk0246df" path="res://assets/playable character/knight/knight_armed_attack/NE/knight_armed_attack_NE_45.0_0.png" id="67_a2mxj"]
+[ext_resource type="Texture2D" uid="uid://cyl6qoa5kpmv7" path="res://assets/playable character/knight/knight_default_walk/W/knight_default_walk_W_180.0_1.png" id="67_nmbhu"]
+[ext_resource type="Texture2D" uid="uid://ius6ubmh1ehs" path="res://assets/playable character/knight/knight_armed_attack/NE/knight_armed_attack_NE_45.0_1.png" id="68_dc62p"]
+[ext_resource type="Texture2D" uid="uid://mdya3pluqf13" path="res://assets/playable character/knight/knight_default_walk/W/knight_default_walk_W_180.0_2.png" id="68_y4h08"]
+[ext_resource type="Texture2D" uid="uid://caq7bj3b5pcs4" path="res://assets/playable character/knight/knight_armed_attack/NE/knight_armed_attack_NE_45.0_2.png" id="69_7s0bn"]
+[ext_resource type="Texture2D" uid="uid://bplo5dqltm6n6" path="res://assets/playable character/knight/knight_default_walk/W/knight_default_walk_W_180.0_3.png" id="69_uj4qj"]
+[ext_resource type="Texture2D" uid="uid://co6nmqi63h56" path="res://assets/playable character/knight/knight_armed_attack/NE/knight_armed_attack_NE_45.0_3.png" id="70_7orva"]
+[ext_resource type="Texture2D" uid="uid://cei6m3id7rqr" path="res://assets/playable character/knight/knight_default_walk/W/knight_default_walk_W_180.0_4.png" id="70_hj7jx"]
+[ext_resource type="Texture2D" uid="uid://cgdcofcv5xb7m" path="res://assets/playable character/knight/knight_armed_attack/NE/knight_armed_attack_NE_45.0_4.png" id="71_5q0yl"]
+[ext_resource type="Texture2D" uid="uid://cv3aa024cfkml" path="res://assets/playable character/knight/knight_default_walk/W/knight_default_walk_W_180.0_5.png" id="71_pn3i1"]
+[ext_resource type="Texture2D" uid="uid://d1ilxgupqrxvn" path="res://assets/playable character/knight/knight_armed_attack/NE/knight_armed_attack_NE_45.0_5.png" id="72_jgpcq"]
+[ext_resource type="Texture2D" uid="uid://5bqb7prw080q" path="res://assets/playable character/knight/knight_default_walk/W/knight_default_walk_W_180.0_6.png" id="72_qevfu"]
+[ext_resource type="Texture2D" uid="uid://ckdidl3r44vqn" path="res://assets/playable character/knight/knight_armed_attack/NE/knight_armed_attack_NE_45.0_6.png" id="73_hwcsu"]
+[ext_resource type="Texture2D" uid="uid://blwo6g3yqepvp" path="res://assets/playable character/knight/knight_default_walk/W/knight_default_walk_W_180.0_7.png" id="73_sao7u"]
+[ext_resource type="Texture2D" uid="uid://v2hariecda36" path="res://assets/playable character/knight/knight_armed_attack/NE/knight_armed_attack_NE_45.0_7.png" id="74_am2ri"]
+[ext_resource type="Texture2D" uid="uid://cmubc108ml83b" path="res://assets/playable character/knight/knight_armed_attack/NEE/knight_armed_attack_NEE_22.5_0.png" id="75_45oc2"]
+[ext_resource type="Texture2D" uid="uid://oie0q7wkpwdm" path="res://assets/playable character/knight/knight_default_walk/NWW/knight_default_walk_NWW_157.5_0.png" id="75_unp7t"]
+[ext_resource type="Texture2D" uid="uid://c78s5qfjvlswn" path="res://assets/playable character/knight/knight_default_walk/NWW/knight_default_walk_NWW_157.5_1.png" id="76_0dfvf"]
+[ext_resource type="Texture2D" uid="uid://cin627b6io8wi" path="res://assets/playable character/knight/knight_armed_attack/NEE/knight_armed_attack_NEE_22.5_1.png" id="76_xks2c"]
+[ext_resource type="Texture2D" uid="uid://buirkbueuqrtb" path="res://assets/playable character/knight/knight_armed_attack/NEE/knight_armed_attack_NEE_22.5_2.png" id="77_51da7"]
+[ext_resource type="Texture2D" uid="uid://0ox2t6r7miqe" path="res://assets/playable character/knight/knight_default_walk/NWW/knight_default_walk_NWW_157.5_2.png" id="77_vawdx"]
+[ext_resource type="Texture2D" uid="uid://dpdqew121bcn8" path="res://assets/playable character/knight/knight_default_walk/NWW/knight_default_walk_NWW_157.5_3.png" id="78_cs56l"]
+[ext_resource type="Texture2D" uid="uid://bgxn860xknse4" path="res://assets/playable character/knight/knight_armed_attack/NEE/knight_armed_attack_NEE_22.5_3.png" id="78_stqxh"]
+[ext_resource type="Texture2D" uid="uid://cttprn3yd8v02" path="res://assets/playable character/knight/knight_default_walk/NWW/knight_default_walk_NWW_157.5_4.png" id="79_pew22"]
+[ext_resource type="Texture2D" uid="uid://cwhiq3g30sc56" path="res://assets/playable character/knight/knight_armed_attack/NEE/knight_armed_attack_NEE_22.5_4.png" id="79_uau84"]
+[ext_resource type="Texture2D" uid="uid://brq5uhmveqnm5" path="res://assets/playable character/knight/knight_default_walk/NWW/knight_default_walk_NWW_157.5_5.png" id="80_e4366"]
+[ext_resource type="Texture2D" uid="uid://bh5v8ew1ly0dj" path="res://assets/playable character/knight/knight_armed_attack/NEE/knight_armed_attack_NEE_22.5_5.png" id="80_l6ft6"]
+[ext_resource type="Texture2D" uid="uid://cuvr6y31fw6g4" path="res://assets/playable character/knight/knight_default_walk/NWW/knight_default_walk_NWW_157.5_6.png" id="81_u2owo"]
+[ext_resource type="Texture2D" uid="uid://cpae441b8qulb" path="res://assets/playable character/knight/knight_armed_attack/NEE/knight_armed_attack_NEE_22.5_6.png" id="81_vfpfo"]
+[ext_resource type="Texture2D" uid="uid://b3ojfgo6eqrp8" path="res://assets/playable character/knight/knight_default_walk/NWW/knight_default_walk_NWW_157.5_7.png" id="82_716wl"]
+[ext_resource type="Texture2D" uid="uid://fdsd4j5mohtx" path="res://assets/playable character/knight/knight_armed_attack/NEE/knight_armed_attack_NEE_22.5_7.png" id="82_k62ca"]
+[ext_resource type="Texture2D" uid="uid://cri4di56n8cl7" path="res://assets/playable character/knight/knight_armed_attack/E/knight_armed_attack_E_0.0_0.png" id="83_qwoab"]
+[ext_resource type="Texture2D" uid="uid://cgd4xnf0mdvop" path="res://assets/playable character/knight/knight_armed_attack/E/knight_armed_attack_E_0.0_1.png" id="84_6xf67"]
+[ext_resource type="Texture2D" uid="uid://dnv2b1iq3ira0" path="res://assets/playable character/knight/knight_armed_attack/E/knight_armed_attack_E_0.0_2.png" id="85_xkg2v"]
+[ext_resource type="Texture2D" uid="uid://b6xuip24dw3io" path="res://assets/playable character/knight/knight_armed_attack/E/knight_armed_attack_E_0.0_3.png" id="86_r4l4e"]
+[ext_resource type="Texture2D" uid="uid://bk1nepsbs1v60" path="res://assets/playable character/knight/knight_armed_attack/E/knight_armed_attack_E_0.0_4.png" id="87_208og"]
+[ext_resource type="Texture2D" uid="uid://cwm11ydoeexw0" path="res://assets/playable character/knight/knight_armed_attack/E/knight_armed_attack_E_0.0_5.png" id="88_bstxb"]
+[ext_resource type="Texture2D" uid="uid://m1grgoh7bnuv" path="res://assets/playable character/knight/knight_armed_attack/E/knight_armed_attack_E_0.0_6.png" id="89_a0182"]
+[ext_resource type="Texture2D" uid="uid://bb8ggwh283med" path="res://assets/playable character/knight/knight_armed_attack/E/knight_armed_attack_E_0.0_7.png" id="90_ivmpg"]
+[ext_resource type="Texture2D" uid="uid://d1my36jstyw7j" path="res://assets/playable character/knight/knight_armed_attack/SEE/knight_armed_attack_SEE_337.5_0.png" id="91_gt2kx"]
+[ext_resource type="Texture2D" uid="uid://bmwvw1ngqdrh4" path="res://assets/playable character/knight/knight_armed_attack/SEE/knight_armed_attack_SEE_337.5_1.png" id="92_q6cha"]
+[ext_resource type="Texture2D" uid="uid://wjwnjytus4gm" path="res://assets/playable character/knight/knight_armed_attack/SEE/knight_armed_attack_SEE_337.5_2.png" id="93_827ai"]
+[ext_resource type="Texture2D" uid="uid://c7qrougp5665a" path="res://assets/playable character/knight/knight_armed_attack/SEE/knight_armed_attack_SEE_337.5_3.png" id="94_p6ous"]
+[ext_resource type="Texture2D" uid="uid://b6sd2aotmqwhq" path="res://assets/playable character/knight/knight_armed_attack/SEE/knight_armed_attack_SEE_337.5_4.png" id="95_csdpy"]
+[ext_resource type="Texture2D" uid="uid://hfld207qj7hj" path="res://assets/playable character/knight/knight_armed_attack/SEE/knight_armed_attack_SEE_337.5_5.png" id="96_ipni2"]
+[ext_resource type="Texture2D" uid="uid://cx4yx8845uxxv" path="res://assets/playable character/knight/knight_armed_attack/SEE/knight_armed_attack_SEE_337.5_6.png" id="97_601ts"]
+[ext_resource type="Texture2D" uid="uid://b5hlsll4iru7v" path="res://assets/playable character/knight/knight_armed_attack/SEE/knight_armed_attack_SEE_337.5_7.png" id="98_bysth"]
+[ext_resource type="Texture2D" uid="uid://bu3rf3idha3os" path="res://assets/playable character/knight/knight_default_walk/SEE/knight_default_walk_SEE_337.5_0.png" id="99_ioiop"]
+[ext_resource type="Texture2D" uid="uid://cumogs6n6bnfw" path="res://assets/playable character/knight/knight_armed_attack/SE/knight_armed_attack_SE_315.0_0.png" id="99_w5oj7"]
+[ext_resource type="Texture2D" uid="uid://csy4kqrhotvv0" path="res://assets/playable character/knight/knight_armed_attack/SE/knight_armed_attack_SE_315.0_1.png" id="100_pk0up"]
+[ext_resource type="Texture2D" uid="uid://bcxifjjpnc6j0" path="res://assets/playable character/knight/knight_default_walk/SEE/knight_default_walk_SEE_337.5_1.png" id="100_r3c42"]
+[ext_resource type="Texture2D" uid="uid://dx8geju6bwsad" path="res://assets/playable character/knight/knight_default_walk/SEE/knight_default_walk_SEE_337.5_2.png" id="101_jdnxv"]
+[ext_resource type="Texture2D" uid="uid://cvslln3l4f6ki" path="res://assets/playable character/knight/knight_armed_attack/SE/knight_armed_attack_SE_315.0_2.png" id="101_oqb8g"]
+[ext_resource type="Texture2D" uid="uid://blhwx7redw3jx" path="res://assets/playable character/knight/knight_armed_attack/SE/knight_armed_attack_SE_315.0_3.png" id="102_3wjad"]
+[ext_resource type="Texture2D" uid="uid://ccy2tuj7suws3" path="res://assets/playable character/knight/knight_default_walk/SEE/knight_default_walk_SEE_337.5_3.png" id="102_276sv"]
+[ext_resource type="Texture2D" uid="uid://cfcgh5bebcgiw" path="res://assets/playable character/knight/knight_armed_attack/SE/knight_armed_attack_SE_315.0_4.png" id="103_3xhxx"]
+[ext_resource type="Texture2D" uid="uid://da7tnrxmtfnox" path="res://assets/playable character/knight/knight_default_walk/SEE/knight_default_walk_SEE_337.5_4.png" id="103_kg7yr"]
+[ext_resource type="Texture2D" uid="uid://dsu8qjaki2p0" path="res://assets/playable character/knight/knight_armed_attack/SE/knight_armed_attack_SE_315.0_5.png" id="104_7gqch"]
+[ext_resource type="Texture2D" uid="uid://o2a5n6jxik8v" path="res://assets/playable character/knight/knight_default_walk/SEE/knight_default_walk_SEE_337.5_5.png" id="104_m33bh"]
+[ext_resource type="Texture2D" uid="uid://dxjykajo3sp5o" path="res://assets/playable character/knight/knight_default_walk/SEE/knight_default_walk_SEE_337.5_6.png" id="105_3k5w7"]
+[ext_resource type="Texture2D" uid="uid://djdqff4yb4a8c" path="res://assets/playable character/knight/knight_armed_attack/SE/knight_armed_attack_SE_315.0_6.png" id="105_fj0g1"]
+[ext_resource type="Texture2D" uid="uid://d2nbu7rgt40i3" path="res://assets/playable character/knight/knight_default_walk/SEE/knight_default_walk_SEE_337.5_7.png" id="106_2x60u"]
+[ext_resource type="Texture2D" uid="uid://b46qfrnsp0r2l" path="res://assets/playable character/knight/knight_armed_attack/SE/knight_armed_attack_SE_315.0_7.png" id="106_pp68w"]
+[ext_resource type="Texture2D" uid="uid://xoxfbuclqrw6" path="res://assets/playable character/knight/knight_armed_attack/SSE/knight_armed_attack_SSE_292.5_0.png" id="107_0g1sy"]
+[ext_resource type="Texture2D" uid="uid://ch216hw8lf8p3" path="res://assets/playable character/knight/knight_default_walk/SSE/knight_default_walk_SSE_292.5_0.png" id="107_4we8t"]
+[ext_resource type="Texture2D" uid="uid://bb1hqol3ykjfx" path="res://assets/playable character/knight/knight_armed_attack/SSE/knight_armed_attack_SSE_292.5_1.png" id="108_e6nfw"]
+[ext_resource type="Texture2D" uid="uid://r6d8aktdm27u" path="res://assets/playable character/knight/knight_default_walk/SSE/knight_default_walk_SSE_292.5_1.png" id="108_nco47"]
+[ext_resource type="Texture2D" uid="uid://bl3xntfvdw1u6" path="res://assets/playable character/knight/knight_default_walk/SSE/knight_default_walk_SSE_292.5_2.png" id="109_hxokb"]
+[ext_resource type="Texture2D" uid="uid://bck8oowtsft0h" path="res://assets/playable character/knight/knight_armed_attack/SSE/knight_armed_attack_SSE_292.5_2.png" id="109_r4xca"]
+[ext_resource type="Texture2D" uid="uid://bkue68by2qmcj" path="res://assets/playable character/knight/knight_armed_attack/SSE/knight_armed_attack_SSE_292.5_3.png" id="110_hpbwv"]
+[ext_resource type="Texture2D" uid="uid://b6ihis1e322g8" path="res://assets/playable character/knight/knight_default_walk/SSE/knight_default_walk_SSE_292.5_3.png" id="110_ksfh0"]
+[ext_resource type="Texture2D" uid="uid://ckn1tqcrkabyy" path="res://assets/playable character/knight/knight_armed_attack/SSE/knight_armed_attack_SSE_292.5_4.png" id="111_rttwy"]
+[ext_resource type="Texture2D" uid="uid://corcjg28vwp5o" path="res://assets/playable character/knight/knight_default_walk/SSE/knight_default_walk_SSE_292.5_4.png" id="111_ryk2d"]
+[ext_resource type="Texture2D" uid="uid://be815mh8ixm1e" path="res://assets/playable character/knight/knight_armed_attack/SSE/knight_armed_attack_SSE_292.5_5.png" id="112_87qx0"]
+[ext_resource type="Texture2D" uid="uid://sr1o584y1rkw" path="res://assets/playable character/knight/knight_default_walk/SSE/knight_default_walk_SSE_292.5_5.png" id="112_f62wk"]
+[ext_resource type="Texture2D" uid="uid://dlwel7oo5iob8" path="res://assets/playable character/knight/knight_armed_attack/SSE/knight_armed_attack_SSE_292.5_6.png" id="113_vac7i"]
+[ext_resource type="Texture2D" uid="uid://bj7l728ulxufc" path="res://assets/playable character/knight/knight_default_walk/SSE/knight_default_walk_SSE_292.5_6.png" id="113_w6snf"]
+[ext_resource type="Texture2D" uid="uid://u4qs6fgr8h5h" path="res://assets/playable character/knight/knight_default_walk/SSE/knight_default_walk_SSE_292.5_7.png" id="114_6t6bv"]
+[ext_resource type="Texture2D" uid="uid://btqymcticuagf" path="res://assets/playable character/knight/knight_armed_attack/SSE/knight_armed_attack_SSE_292.5_7.png" id="114_kobia"]
+[ext_resource type="Texture2D" uid="uid://bkd2mr1seelxw" path="res://assets/playable character/knight/knight_armed_attack/S/knight_armed_attack_S_270.0_0.png" id="115_bpkbt"]
+[ext_resource type="Texture2D" uid="uid://fpfjt1cx6ps0" path="res://assets/playable character/knight/knight_default_walk/SSW/knight_default_walk_SSW_247.5_0.png" id="115_yqpvi"]
+[ext_resource type="Texture2D" uid="uid://l7xiq5icpw6t" path="res://assets/playable character/knight/knight_armed_attack/S/knight_armed_attack_S_270.0_1.png" id="116_37jae"]
+[ext_resource type="Texture2D" uid="uid://cgympr8ubu6l1" path="res://assets/playable character/knight/knight_default_walk/SSW/knight_default_walk_SSW_247.5_1.png" id="116_aewnk"]
+[ext_resource type="Texture2D" uid="uid://bgh8l8ny87mss" path="res://assets/playable character/knight/knight_default_walk/SSW/knight_default_walk_SSW_247.5_2.png" id="117_j1ntx"]
+[ext_resource type="Texture2D" uid="uid://dln8y6jywf5eo" path="res://assets/playable character/knight/knight_armed_attack/S/knight_armed_attack_S_270.0_2.png" id="117_r561d"]
+[ext_resource type="Texture2D" uid="uid://c61ocuvox5f8e" path="res://assets/playable character/knight/knight_armed_attack/S/knight_armed_attack_S_270.0_3.png" id="118_ce3ir"]
+[ext_resource type="Texture2D" uid="uid://hg67xfndflg4" path="res://assets/playable character/knight/knight_default_walk/SSW/knight_default_walk_SSW_247.5_3.png" id="118_tf4se"]
+[ext_resource type="Texture2D" uid="uid://cu2lxvit5uj7u" path="res://assets/playable character/knight/knight_armed_attack/S/knight_armed_attack_S_270.0_4.png" id="119_e8so0"]
+[ext_resource type="Texture2D" uid="uid://or08h8iopu07" path="res://assets/playable character/knight/knight_default_walk/SSW/knight_default_walk_SSW_247.5_4.png" id="119_xsi4d"]
+[ext_resource type="Texture2D" uid="uid://1nqe82k8xtj4" path="res://assets/playable character/knight/knight_default_walk/SSW/knight_default_walk_SSW_247.5_5.png" id="120_f6xng"]
+[ext_resource type="Texture2D" uid="uid://bavxtp0tjtder" path="res://assets/playable character/knight/knight_armed_attack/S/knight_armed_attack_S_270.0_5.png" id="120_hbdla"]
+[ext_resource type="Texture2D" uid="uid://bn67nlprg4lvw" path="res://assets/playable character/knight/knight_armed_attack/S/knight_armed_attack_S_270.0_6.png" id="121_rxuad"]
+[ext_resource type="Texture2D" uid="uid://bs4ebct7gow6a" path="res://assets/playable character/knight/knight_default_walk/SSW/knight_default_walk_SSW_247.5_6.png" id="121_tyt5q"]
+[ext_resource type="Texture2D" uid="uid://c58n463jununx" path="res://assets/playable character/knight/knight_default_walk/SSW/knight_default_walk_SSW_247.5_7.png" id="122_1sd25"]
+[ext_resource type="Texture2D" uid="uid://b6shhbdbxybsa" path="res://assets/playable character/knight/knight_armed_attack/S/knight_armed_attack_S_270.0_7.png" id="122_fhtmv"]
+[ext_resource type="Texture2D" uid="uid://dj1aews3ut4lx" path="res://assets/playable character/knight/knight_armed_attack/SSW/knight_armed_attack_SSW_247.5_0.png" id="123_8kmbw"]
+[ext_resource type="Texture2D" uid="uid://3nqjcdn5f5a0" path="res://assets/playable character/knight/knight_armed_attack/SSW/knight_armed_attack_SSW_247.5_1.png" id="124_adbuo"]
+[ext_resource type="Texture2D" uid="uid://c5mbk4r752qux" path="res://assets/playable character/knight/knight_armed_attack/SSW/knight_armed_attack_SSW_247.5_2.png" id="125_cpgbg"]
+[ext_resource type="Texture2D" uid="uid://do1ggsnkdae33" path="res://assets/playable character/knight/knight_armed_attack/SSW/knight_armed_attack_SSW_247.5_3.png" id="126_fsw78"]
+[ext_resource type="Texture2D" uid="uid://c1ww6uv2kk07m" path="res://assets/playable character/knight/knight_armed_attack/SSW/knight_armed_attack_SSW_247.5_4.png" id="127_ybeto"]
+[ext_resource type="Texture2D" uid="uid://dduxs75iw5ukx" path="res://assets/playable character/knight/knight_armed_attack/SSW/knight_armed_attack_SSW_247.5_5.png" id="128_sjsq6"]
+[ext_resource type="Texture2D" uid="uid://b086sc2uve3l7" path="res://assets/playable character/knight/knight_armed_attack/SSW/knight_armed_attack_SSW_247.5_6.png" id="129_fk6qy"]
+[ext_resource type="Texture2D" uid="uid://dufb2q28wdcbb" path="res://assets/playable character/knight/knight_armed_attack/SSW/knight_armed_attack_SSW_247.5_7.png" id="130_q1q8q"]
+[ext_resource type="Texture2D" uid="uid://c50wfamh8ysyq" path="res://assets/playable character/knight/knight_default_walk/SWW/knight_default_walk_SWW_202.5_0.png" id="131_6f7x2"]
+[ext_resource type="Texture2D" uid="uid://dm1spenj1r513" path="res://assets/playable character/knight/knight_default_walk/SWW/knight_default_walk_SWW_202.5_1.png" id="132_wx0ab"]
+[ext_resource type="Texture2D" uid="uid://dgwgx35jdhx5a" path="res://assets/playable character/knight/knight_default_walk/SWW/knight_default_walk_SWW_202.5_2.png" id="133_jfgcl"]
+[ext_resource type="Texture2D" uid="uid://coodjymhedbyw" path="res://assets/playable character/knight/knight_default_walk/SWW/knight_default_walk_SWW_202.5_3.png" id="134_sc1ms"]
+[ext_resource type="Texture2D" uid="uid://bmdd0j0rwwvor" path="res://assets/playable character/knight/knight_default_walk/SWW/knight_default_walk_SWW_202.5_4.png" id="135_2d1eg"]
+[ext_resource type="Texture2D" uid="uid://da8v1ppb2pugd" path="res://assets/playable character/knight/knight_default_walk/SWW/knight_default_walk_SWW_202.5_5.png" id="136_s4rum"]
+[ext_resource type="Texture2D" uid="uid://tr10l4oaj5m2" path="res://assets/playable character/knight/knight_default_walk/SWW/knight_default_walk_SWW_202.5_6.png" id="137_avbym"]
+[ext_resource type="Texture2D" uid="uid://d4asrl6rwlrqa" path="res://assets/playable character/knight/knight_default_walk/SWW/knight_default_walk_SWW_202.5_7.png" id="138_8lhnk"]
+[ext_resource type="PackedScene" uid="uid://dl6recigflrik" path="res://scenes/StateMachine.tscn" id="275_12b4i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l7tnb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yf10n"]
+radius = 25.0801
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gpv5l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_u5me8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bxp50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_w3q4u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_booke")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3isnd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wwf7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_n0ml5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7wpyb")
+}],
+"loop": true,
+"name": &"attack_0",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_ker31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ndnbf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_tddc2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_uo7sv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_27yei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_cndbr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_emwsn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_o84r0")
+}],
+"loop": true,
+"name": &"attack_1",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_xjw1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_oe154")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_tkoy2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_q7tck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_hbw0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_mi0u0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_nt1r8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_kcf80")
+}],
+"loop": true,
+"name": &"attack_10",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_dtsnf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_rsdsy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_ukm8m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_sti6r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_k1pkm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_8nuk3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_jteej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_vcg23")
+}],
+"loop": true,
+"name": &"attack_11",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_r30ob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_napuj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_nl40a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_p1ag2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_d862x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_hgehb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_pvdc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_ah12e")
+}],
+"loop": true,
+"name": &"attack_12",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_s04vl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_eis02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_e45ox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_8hddn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_hjexq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_mn56p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_80lb4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_xumye")
+}],
+"loop": true,
+"name": &"attack_13",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("51_5sp0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_ukr5h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_4hgt5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_wh2el")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_31wdl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_ohvhu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_ld7pm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_l17cg")
+}],
+"loop": true,
+"name": &"attack_14",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("59_o5rva")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_kjgdr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_q70qw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_3g08r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_w2wj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_kliqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_qdjv1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_rjqr0")
+}],
+"loop": true,
+"name": &"attack_15",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("67_a2mxj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_dc62p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_7s0bn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_7orva")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_5q0yl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_jgpcq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_hwcsu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_am2ri")
+}],
+"loop": true,
+"name": &"attack_2",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("75_45oc2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_xks2c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_51da7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_stqxh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_uau84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_l6ft6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_vfpfo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_k62ca")
+}],
+"loop": true,
+"name": &"attack_3",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("83_qwoab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_6xf67")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_xkg2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_r4l4e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_208og")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_bstxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_a0182")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_ivmpg")
+}],
+"loop": true,
+"name": &"attack_4",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("91_gt2kx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_q6cha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_827ai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_p6ous")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_csdpy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_ipni2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_601ts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_bysth")
+}],
+"loop": true,
+"name": &"attack_5",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("99_w5oj7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_pk0up")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_oqb8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_3wjad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_3xhxx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_7gqch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_fj0g1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_pp68w")
+}],
+"loop": true,
+"name": &"attack_6",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("107_0g1sy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_e6nfw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_r4xca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_hpbwv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_rttwy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_87qx0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_vac7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_kobia")
+}],
+"loop": true,
+"name": &"attack_7",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("115_bpkbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116_37jae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_r561d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118_ce3ir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_e8so0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("120_hbdla")
+}, {
+"duration": 1.0,
+"texture": ExtResource("121_rxuad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_fhtmv")
+}],
+"loop": true,
+"name": &"attack_8",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("123_8kmbw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124_adbuo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125_cpgbg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126_fsw78")
+}, {
+"duration": 1.0,
+"texture": ExtResource("127_ybeto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("128_sjsq6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("129_fk6qy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_q1q8q")
+}],
+"loop": true,
+"name": &"attack_9",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ukgr7")
+}],
+"loop": true,
+"name": &"idle_0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_phmhp")
+}],
+"loop": true,
+"name": &"idle_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_oryn1")
+}],
+"loop": true,
+"name": &"idle_10",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_n1n4h")
+}],
+"loop": true,
+"name": &"idle_11",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_hxmti")
+}],
+"loop": true,
+"name": &"idle_12",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_2t23v")
+}],
+"loop": true,
+"name": &"idle_13",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_vnjv6")
+}],
+"loop": true,
+"name": &"idle_14",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_lxgr2")
+}],
+"loop": true,
+"name": &"idle_15",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_wdexl")
+}],
+"loop": true,
+"name": &"idle_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_5ry4v")
+}],
+"loop": true,
+"name": &"idle_3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_suejk")
+}],
+"loop": true,
+"name": &"idle_4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_uunx5")
+}],
+"loop": true,
+"name": &"idle_5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_yratk")
+}],
+"loop": true,
+"name": &"idle_6",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_xlghw")
+}],
+"loop": true,
+"name": &"idle_7",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_x874w")
+}],
+"loop": true,
+"name": &"idle_8",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_o0bge")
+}],
+"loop": true,
+"name": &"idle_9",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_iokwq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_b73uf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_flbbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_0msq0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_c2w3k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_igm3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_6beym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_wbmco")
+}],
+"loop": true,
+"name": &"walk_0",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("51_duecu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_b471a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_3xfkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_wbxrg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_237xn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_k6v17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_a02dv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_6p6nl")
+}],
+"loop": true,
+"name": &"walk_1",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("58_suaxe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_raf0k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_cjlpx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_xskjo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_2evsd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_ur5up")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_y3gwq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_q5dnq")
+}],
+"loop": true,
+"name": &"walk_10",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("131_6f7x2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("132_wx0ab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("133_jfgcl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_sc1ms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("135_2d1eg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("136_s4rum")
+}, {
+"duration": 1.0,
+"texture": ExtResource("137_avbym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("138_8lhnk")
+}],
+"loop": true,
+"name": &"walk_11",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("66_dmrvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_nmbhu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_y4h08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_uj4qj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_hj7jx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_pn3i1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_qevfu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_sao7u")
+}],
+"loop": true,
+"name": &"walk_12",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("75_unp7t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_0dfvf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_vawdx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_cs56l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_pew22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_e4366")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_u2owo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_716wl")
+}],
+"loop": true,
+"name": &"walk_13",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_0jy3d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_flibo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_5828g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_05tnc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_rbbt4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_gjhsg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_fxsrr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_pp8wu")
+}],
+"loop": true,
+"name": &"walk_14",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("59_55tf8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_23rn3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_fxirg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_6ln7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_orpmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_elfx2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_jsmij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_joa8e")
+}],
+"loop": true,
+"name": &"walk_15",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_w4mn0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_a8fak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_qynn1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_ggmi4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_pot4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_nf4yx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_kdqsu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_5wy4c")
+}],
+"loop": true,
+"name": &"walk_2",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_bfpuh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_hjrat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_twsdx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_hs5km")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_df4qa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_yyiho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_j178n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_60fq1")
+}],
+"loop": true,
+"name": &"walk_3",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_qlx57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ordlw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vqd38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_lau38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_m8ywk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_rtps3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_6l4pj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_8t177")
+}],
+"loop": true,
+"name": &"walk_4",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("99_ioiop")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_r3c42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_jdnxv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_276sv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_kg7yr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_m33bh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_3k5w7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_2x60u")
+}],
+"loop": true,
+"name": &"walk_5",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("50_orwlh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_ij275")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_vbb1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_dy4sc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_6b8f4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_wslmh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_n8j8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_gp87s")
+}],
+"loop": true,
+"name": &"walk_6",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("107_4we8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_nco47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_hxokb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_ksfh0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_ryk2d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_f62wk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_w6snf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_6t6bv")
+}],
+"loop": true,
+"name": &"walk_7",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("42_q5fbx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_epp33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_0i3pb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_4a4u1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_nqyjt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_y7fyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_iy0iw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_b8ddr")
+}],
+"loop": true,
+"name": &"walk_8",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("115_yqpvi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116_aewnk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_j1ntx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118_tf4se")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_xsi4d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("120_f6xng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("121_tyt5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_1sd25")
+}],
+"loop": true,
+"name": &"walk_9",
+"speed": 12.0
+}]
+
+[node name="Unit" type="CharacterBody2D" groups=["units"]]
+collision_mask = 0
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_b2d1e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.0486, 1.01047)
+shape = SubResource("CircleShape2D_l7tnb")
+
+[node name="CombatArea" type="Area2D" parent="." groups=["combat_areas"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CombatArea"]
+scale = Vector2(1.05064, 1.00869)
+shape = SubResource("CircleShape2D_yf10n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gpv5l")
+animation = &"idle_7"
+autoplay = "idle_8"
+
+[node name="StateMachine" parent="." instance=ExtResource("275_12b4i")]
+
+[node name="MovementComponent" type="Node" parent="."]
+
+[node name="CombatComponent" type="Node" parent="."]
+
+[node name="HealthComponent" type="Node" parent="."]
+
+[node name="SelectionHighlight" type="Sprite2D" parent="."]
+visible = false
+show_behind_parent = true
+scale = Vector2(1.29302, 1.33713)
+texture = ExtResource("2_s73kd")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+
+[connection signal="body_entered" from="CombatArea" to="." method="_on_combat_area_body_entered"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://455ytoxyqdwt"]
+
+[ext_resource type="Script" path="res://scripts/castle.gd" id="1_7eetl"]
+[ext_resource type="Texture2D" uid="uid://dgesbx66p7kw3" path="res://assets/castle.png" id="1_7fkcx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iphjs"]
+size = Vector2(96, 90)
+
+[node name="Castle" type="Area2D" groups=["castle"]]
+script = ExtResource("1_7eetl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_iphjs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.87971, 1.80645)
+texture = ExtResource("1_7fkcx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

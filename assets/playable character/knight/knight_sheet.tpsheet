@@ -1,0 +1,2196 @@
+{
+	"textures": [
+		{
+			"image": "knight_sheet-0.png",
+			"size": {
+				"w": 1806,
+				"h": 1806
+			},
+			"sprites": [
+				{
+					"filename": "E/knight_default_idle_E_0.0_0.png",
+					"region": {
+						"x": 1,
+						"y": 1,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "E/knight_default_walk_E_0.0_0.png",
+					"region": {
+						"x": 1,
+						"y": 259,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "E/knight_default_walk_E_0.0_1.png",
+					"region": {
+						"x": 1,
+						"y": 517,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "E/knight_default_walk_E_0.0_2.png",
+					"region": {
+						"x": 1,
+						"y": 775,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "E/knight_default_walk_E_0.0_3.png",
+					"region": {
+						"x": 1,
+						"y": 1033,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "E/knight_default_walk_E_0.0_4.png",
+					"region": {
+						"x": 1,
+						"y": 1291,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "E/knight_default_walk_E_0.0_5.png",
+					"region": {
+						"x": 1,
+						"y": 1549,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "E/knight_default_walk_E_0.0_6.png",
+					"region": {
+						"x": 259,
+						"y": 1,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "E/knight_default_walk_E_0.0_7.png",
+					"region": {
+						"x": 517,
+						"y": 1,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "N/knight_default_idle_N_90.0_0.png",
+					"region": {
+						"x": 775,
+						"y": 1,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "N/knight_default_walk_N_90.0_0.png",
+					"region": {
+						"x": 1033,
+						"y": 1,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "N/knight_default_walk_N_90.0_1.png",
+					"region": {
+						"x": 1291,
+						"y": 1,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "N/knight_default_walk_N_90.0_2.png",
+					"region": {
+						"x": 1549,
+						"y": 1,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "N/knight_default_walk_N_90.0_3.png",
+					"region": {
+						"x": 259,
+						"y": 259,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "N/knight_default_walk_N_90.0_4.png",
+					"region": {
+						"x": 259,
+						"y": 517,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "N/knight_default_walk_N_90.0_5.png",
+					"region": {
+						"x": 259,
+						"y": 775,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "N/knight_default_walk_N_90.0_6.png",
+					"region": {
+						"x": 259,
+						"y": 1033,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "N/knight_default_walk_N_90.0_7.png",
+					"region": {
+						"x": 259,
+						"y": 1291,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NE/knight_default_idle_NE_45.0_0.png",
+					"region": {
+						"x": 259,
+						"y": 1549,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NE/knight_default_walk_NE_45.0_0.png",
+					"region": {
+						"x": 517,
+						"y": 259,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NE/knight_default_walk_NE_45.0_1.png",
+					"region": {
+						"x": 775,
+						"y": 259,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NE/knight_default_walk_NE_45.0_2.png",
+					"region": {
+						"x": 1033,
+						"y": 259,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NE/knight_default_walk_NE_45.0_3.png",
+					"region": {
+						"x": 1291,
+						"y": 259,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NE/knight_default_walk_NE_45.0_4.png",
+					"region": {
+						"x": 1549,
+						"y": 259,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NE/knight_default_walk_NE_45.0_5.png",
+					"region": {
+						"x": 517,
+						"y": 517,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NE/knight_default_walk_NE_45.0_6.png",
+					"region": {
+						"x": 517,
+						"y": 775,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NE/knight_default_walk_NE_45.0_7.png",
+					"region": {
+						"x": 517,
+						"y": 1033,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NEE/knight_default_idle_NEE_22.5_0.png",
+					"region": {
+						"x": 517,
+						"y": 1291,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NEE/knight_default_walk_NEE_22.5_0.png",
+					"region": {
+						"x": 517,
+						"y": 1549,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NEE/knight_default_walk_NEE_22.5_1.png",
+					"region": {
+						"x": 775,
+						"y": 517,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NEE/knight_default_walk_NEE_22.5_2.png",
+					"region": {
+						"x": 1033,
+						"y": 517,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NEE/knight_default_walk_NEE_22.5_3.png",
+					"region": {
+						"x": 1291,
+						"y": 517,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NEE/knight_default_walk_NEE_22.5_4.png",
+					"region": {
+						"x": 1549,
+						"y": 517,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NEE/knight_default_walk_NEE_22.5_5.png",
+					"region": {
+						"x": 775,
+						"y": 775,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NEE/knight_default_walk_NEE_22.5_6.png",
+					"region": {
+						"x": 775,
+						"y": 1033,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NEE/knight_default_walk_NEE_22.5_7.png",
+					"region": {
+						"x": 775,
+						"y": 1291,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NNE/knight_default_idle_NNE_67.5_0.png",
+					"region": {
+						"x": 775,
+						"y": 1549,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NNE/knight_default_walk_NNE_67.5_0.png",
+					"region": {
+						"x": 1033,
+						"y": 775,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NNE/knight_default_walk_NNE_67.5_1.png",
+					"region": {
+						"x": 1291,
+						"y": 775,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NNE/knight_default_walk_NNE_67.5_2.png",
+					"region": {
+						"x": 1549,
+						"y": 775,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NNE/knight_default_walk_NNE_67.5_3.png",
+					"region": {
+						"x": 1033,
+						"y": 1033,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NNE/knight_default_walk_NNE_67.5_4.png",
+					"region": {
+						"x": 1033,
+						"y": 1291,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NNE/knight_default_walk_NNE_67.5_5.png",
+					"region": {
+						"x": 1033,
+						"y": 1549,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NNE/knight_default_walk_NNE_67.5_6.png",
+					"region": {
+						"x": 1291,
+						"y": 1033,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NNE/knight_default_walk_NNE_67.5_7.png",
+					"region": {
+						"x": 1549,
+						"y": 1033,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NNW/knight_default_idle_NNW_112.5_0.png",
+					"region": {
+						"x": 1291,
+						"y": 1291,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NNW/knight_default_walk_NNW_112.5_0.png",
+					"region": {
+						"x": 1291,
+						"y": 1549,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NNW/knight_default_walk_NNW_112.5_1.png",
+					"region": {
+						"x": 1549,
+						"y": 1291,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NNW/knight_default_walk_NNW_112.5_2.png",
+					"region": {
+						"x": 1549,
+						"y": 1549,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				}
+			]
+		},
+		{
+			"image": "knight_sheet-1.png",
+			"size": {
+				"w": 1806,
+				"h": 1806
+			},
+			"sprites": [
+				{
+					"filename": "NNW/knight_default_walk_NNW_112.5_3.png",
+					"region": {
+						"x": 1,
+						"y": 1,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NNW/knight_default_walk_NNW_112.5_4.png",
+					"region": {
+						"x": 1,
+						"y": 259,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NNW/knight_default_walk_NNW_112.5_5.png",
+					"region": {
+						"x": 1,
+						"y": 517,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NNW/knight_default_walk_NNW_112.5_6.png",
+					"region": {
+						"x": 1,
+						"y": 775,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NNW/knight_default_walk_NNW_112.5_7.png",
+					"region": {
+						"x": 1,
+						"y": 1033,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NW/knight_default_idle_NW_135.0_0.png",
+					"region": {
+						"x": 1,
+						"y": 1291,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NW/knight_default_walk_NW_135.0_0.png",
+					"region": {
+						"x": 1,
+						"y": 1549,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NW/knight_default_walk_NW_135.0_1.png",
+					"region": {
+						"x": 259,
+						"y": 1,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NW/knight_default_walk_NW_135.0_2.png",
+					"region": {
+						"x": 517,
+						"y": 1,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NW/knight_default_walk_NW_135.0_3.png",
+					"region": {
+						"x": 775,
+						"y": 1,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NW/knight_default_walk_NW_135.0_4.png",
+					"region": {
+						"x": 1033,
+						"y": 1,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NW/knight_default_walk_NW_135.0_5.png",
+					"region": {
+						"x": 1291,
+						"y": 1,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NW/knight_default_walk_NW_135.0_6.png",
+					"region": {
+						"x": 1549,
+						"y": 1,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NW/knight_default_walk_NW_135.0_7.png",
+					"region": {
+						"x": 259,
+						"y": 259,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NWW/knight_default_idle_NWW_157.5_0.png",
+					"region": {
+						"x": 259,
+						"y": 517,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NWW/knight_default_walk_NWW_157.5_0.png",
+					"region": {
+						"x": 259,
+						"y": 775,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NWW/knight_default_walk_NWW_157.5_1.png",
+					"region": {
+						"x": 259,
+						"y": 1033,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NWW/knight_default_walk_NWW_157.5_2.png",
+					"region": {
+						"x": 259,
+						"y": 1291,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NWW/knight_default_walk_NWW_157.5_3.png",
+					"region": {
+						"x": 259,
+						"y": 1549,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NWW/knight_default_walk_NWW_157.5_4.png",
+					"region": {
+						"x": 517,
+						"y": 259,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NWW/knight_default_walk_NWW_157.5_5.png",
+					"region": {
+						"x": 775,
+						"y": 259,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NWW/knight_default_walk_NWW_157.5_6.png",
+					"region": {
+						"x": 1033,
+						"y": 259,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "NWW/knight_default_walk_NWW_157.5_7.png",
+					"region": {
+						"x": 1291,
+						"y": 259,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "S/knight_default_idle_S_270.0_0.png",
+					"region": {
+						"x": 1549,
+						"y": 259,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "S/knight_default_walk_S_270.0_0.png",
+					"region": {
+						"x": 517,
+						"y": 517,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "S/knight_default_walk_S_270.0_1.png",
+					"region": {
+						"x": 517,
+						"y": 775,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "S/knight_default_walk_S_270.0_2.png",
+					"region": {
+						"x": 517,
+						"y": 1033,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "S/knight_default_walk_S_270.0_3.png",
+					"region": {
+						"x": 517,
+						"y": 1291,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "S/knight_default_walk_S_270.0_4.png",
+					"region": {
+						"x": 517,
+						"y": 1549,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "S/knight_default_walk_S_270.0_5.png",
+					"region": {
+						"x": 775,
+						"y": 517,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "S/knight_default_walk_S_270.0_6.png",
+					"region": {
+						"x": 1033,
+						"y": 517,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "S/knight_default_walk_S_270.0_7.png",
+					"region": {
+						"x": 1291,
+						"y": 517,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SE/knight_default_idle_SE_315.0_0.png",
+					"region": {
+						"x": 1549,
+						"y": 517,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SE/knight_default_walk_SE_315.0_0.png",
+					"region": {
+						"x": 775,
+						"y": 775,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SE/knight_default_walk_SE_315.0_1.png",
+					"region": {
+						"x": 775,
+						"y": 1033,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SE/knight_default_walk_SE_315.0_2.png",
+					"region": {
+						"x": 775,
+						"y": 1291,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SE/knight_default_walk_SE_315.0_3.png",
+					"region": {
+						"x": 775,
+						"y": 1549,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SE/knight_default_walk_SE_315.0_4.png",
+					"region": {
+						"x": 1033,
+						"y": 775,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SE/knight_default_walk_SE_315.0_5.png",
+					"region": {
+						"x": 1291,
+						"y": 775,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SE/knight_default_walk_SE_315.0_6.png",
+					"region": {
+						"x": 1549,
+						"y": 775,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SE/knight_default_walk_SE_315.0_7.png",
+					"region": {
+						"x": 1033,
+						"y": 1033,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SEE/knight_default_idle_SEE_337.5_0.png",
+					"region": {
+						"x": 1033,
+						"y": 1291,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SEE/knight_default_walk_SEE_337.5_0.png",
+					"region": {
+						"x": 1033,
+						"y": 1549,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SEE/knight_default_walk_SEE_337.5_1.png",
+					"region": {
+						"x": 1291,
+						"y": 1033,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SEE/knight_default_walk_SEE_337.5_2.png",
+					"region": {
+						"x": 1549,
+						"y": 1033,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SEE/knight_default_walk_SEE_337.5_3.png",
+					"region": {
+						"x": 1291,
+						"y": 1291,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SEE/knight_default_walk_SEE_337.5_4.png",
+					"region": {
+						"x": 1291,
+						"y": 1549,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SEE/knight_default_walk_SEE_337.5_5.png",
+					"region": {
+						"x": 1549,
+						"y": 1291,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SEE/knight_default_walk_SEE_337.5_6.png",
+					"region": {
+						"x": 1549,
+						"y": 1549,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				}
+			]
+		},
+		{
+			"image": "knight_sheet-2.png",
+			"size": {
+				"w": 1806,
+				"h": 1806
+			},
+			"sprites": [
+				{
+					"filename": "SEE/knight_default_walk_SEE_337.5_7.png",
+					"region": {
+						"x": 1,
+						"y": 1,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SSE/knight_default_idle_SSE_292.5_0.png",
+					"region": {
+						"x": 1,
+						"y": 259,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SSE/knight_default_walk_SSE_292.5_0.png",
+					"region": {
+						"x": 1,
+						"y": 517,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SSE/knight_default_walk_SSE_292.5_1.png",
+					"region": {
+						"x": 1,
+						"y": 775,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SSE/knight_default_walk_SSE_292.5_2.png",
+					"region": {
+						"x": 1,
+						"y": 1033,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SSE/knight_default_walk_SSE_292.5_3.png",
+					"region": {
+						"x": 1,
+						"y": 1291,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SSE/knight_default_walk_SSE_292.5_4.png",
+					"region": {
+						"x": 1,
+						"y": 1549,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SSE/knight_default_walk_SSE_292.5_5.png",
+					"region": {
+						"x": 259,
+						"y": 1,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SSE/knight_default_walk_SSE_292.5_6.png",
+					"region": {
+						"x": 517,
+						"y": 1,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SSE/knight_default_walk_SSE_292.5_7.png",
+					"region": {
+						"x": 775,
+						"y": 1,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SSW/knight_default_idle_SSW_247.5_0.png",
+					"region": {
+						"x": 1033,
+						"y": 1,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SSW/knight_default_walk_SSW_247.5_0.png",
+					"region": {
+						"x": 1291,
+						"y": 1,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SSW/knight_default_walk_SSW_247.5_1.png",
+					"region": {
+						"x": 1549,
+						"y": 1,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SSW/knight_default_walk_SSW_247.5_2.png",
+					"region": {
+						"x": 259,
+						"y": 259,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SSW/knight_default_walk_SSW_247.5_3.png",
+					"region": {
+						"x": 259,
+						"y": 517,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SSW/knight_default_walk_SSW_247.5_4.png",
+					"region": {
+						"x": 259,
+						"y": 775,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SSW/knight_default_walk_SSW_247.5_5.png",
+					"region": {
+						"x": 259,
+						"y": 1033,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SSW/knight_default_walk_SSW_247.5_6.png",
+					"region": {
+						"x": 259,
+						"y": 1291,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SSW/knight_default_walk_SSW_247.5_7.png",
+					"region": {
+						"x": 259,
+						"y": 1549,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SW/knight_default_idle_SW_225.0_0.png",
+					"region": {
+						"x": 517,
+						"y": 259,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SW/knight_default_walk_SW_225.0_0.png",
+					"region": {
+						"x": 775,
+						"y": 259,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SW/knight_default_walk_SW_225.0_1.png",
+					"region": {
+						"x": 1033,
+						"y": 259,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SW/knight_default_walk_SW_225.0_2.png",
+					"region": {
+						"x": 1291,
+						"y": 259,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SW/knight_default_walk_SW_225.0_3.png",
+					"region": {
+						"x": 1549,
+						"y": 259,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SW/knight_default_walk_SW_225.0_4.png",
+					"region": {
+						"x": 517,
+						"y": 517,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SW/knight_default_walk_SW_225.0_5.png",
+					"region": {
+						"x": 517,
+						"y": 775,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SW/knight_default_walk_SW_225.0_6.png",
+					"region": {
+						"x": 517,
+						"y": 1033,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SW/knight_default_walk_SW_225.0_7.png",
+					"region": {
+						"x": 517,
+						"y": 1291,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SWW/knight_default_idle_SWW_202.5_0.png",
+					"region": {
+						"x": 517,
+						"y": 1549,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SWW/knight_default_walk_SWW_202.5_0.png",
+					"region": {
+						"x": 775,
+						"y": 517,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SWW/knight_default_walk_SWW_202.5_1.png",
+					"region": {
+						"x": 1033,
+						"y": 517,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SWW/knight_default_walk_SWW_202.5_2.png",
+					"region": {
+						"x": 1291,
+						"y": 517,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SWW/knight_default_walk_SWW_202.5_3.png",
+					"region": {
+						"x": 1549,
+						"y": 517,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SWW/knight_default_walk_SWW_202.5_4.png",
+					"region": {
+						"x": 775,
+						"y": 775,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SWW/knight_default_walk_SWW_202.5_5.png",
+					"region": {
+						"x": 775,
+						"y": 1033,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SWW/knight_default_walk_SWW_202.5_6.png",
+					"region": {
+						"x": 775,
+						"y": 1291,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "SWW/knight_default_walk_SWW_202.5_7.png",
+					"region": {
+						"x": 775,
+						"y": 1549,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "W/knight_default_idle_W_180.0_0.png",
+					"region": {
+						"x": 1033,
+						"y": 775,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "W/knight_default_walk_W_180.0_0.png",
+					"region": {
+						"x": 1291,
+						"y": 775,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "W/knight_default_walk_W_180.0_1.png",
+					"region": {
+						"x": 1549,
+						"y": 775,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "W/knight_default_walk_W_180.0_2.png",
+					"region": {
+						"x": 1033,
+						"y": 1033,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "W/knight_default_walk_W_180.0_3.png",
+					"region": {
+						"x": 1033,
+						"y": 1291,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "W/knight_default_walk_W_180.0_4.png",
+					"region": {
+						"x": 1033,
+						"y": 1549,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "W/knight_default_walk_W_180.0_5.png",
+					"region": {
+						"x": 1291,
+						"y": 1033,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "W/knight_default_walk_W_180.0_6.png",
+					"region": {
+						"x": 1549,
+						"y": 1033,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "W/knight_default_walk_W_180.0_7.png",
+					"region": {
+						"x": 1291,
+						"y": 1291,
+						"w": 256,
+						"h": 256
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:6ed29795e03885149d6359408eb5caea:9481b0c2f9641b8e6d797700e3cc06cf:097373d4d2c508f64541a471d462ffbb$"
+	}
+}
