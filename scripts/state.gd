@@ -1,10 +1,28 @@
-class_name State
 extends Node
+class_name State
 
-signal state_transition_requested(new_state: String)
+var state_machine = null
+var unit = null
 
-var unit: CharacterBody2D
+signal state_transition_requested(new_state)
 
-func enter(): pass
-func exit(): pass
-func physics_update(_delta: float): pass
+func _ready():
+	await owner.ready
+	
+	# Get reference to state machine
+	state_machine = get_parent()
+	
+	# Get reference to the Unit (owner of the state machine)
+	unit = owner.get_parent()
+
+func enter():
+	pass
+
+func exit():
+	pass
+
+func update(delta):
+	pass
+
+func physics_update(delta):
+	pass

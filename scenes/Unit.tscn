@@ -1346,6 +1346,12 @@ motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_b2d1e")
 
+[node name="SelectionHighlight" type="Sprite2D" parent="."]
+visible = false
+show_behind_parent = true
+scale = Vector2(1.29302, 1.33713)
+texture = ExtResource("2_s73kd")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1.0486, 1.01047)
 shape = SubResource("CircleShape2D_l7tnb")
@@ -1369,13 +1375,11 @@ autoplay = "idle_8"
 
 [node name="HealthComponent" type="Node" parent="."]
 
-[node name="SelectionHighlight" type="Sprite2D" parent="."]
-visible = false
-show_behind_parent = true
-scale = Vector2(1.29302, 1.33713)
-texture = ExtResource("2_s73kd")
-
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-debug_enabled = true
+path_desired_distance = 5.0
+target_desired_distance = 5.0
+avoidance_enabled = true
+debug_path_custom_color = Color(1, 1, 1, 0.117647)
+debug_path_custom_point_size = 0.0
 
 [connection signal="body_entered" from="CombatArea" to="." method="_on_combat_area_body_entered"]

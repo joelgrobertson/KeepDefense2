@@ -4,67 +4,99 @@ extends Node
 
 var selected_units := []
 var is_dragging := false
+var drag_start_world_pos := Vector2.ZERO
 
 # Formation parameters
-@export var formation_spacing := Vector2(50, 50)  # Space between units
+@export var formation_spacing := Vector2(50, 50)
 @export var formation_shape := "grid"  # Options: "grid", "line", "wedge"
 
-func get_global_mouse_position() -> Vector2:
-	return get_viewport().get_camera_2d().get_global_mouse_position()
+func _ready():
+	set_process_unhandled_input(true)
+	print("UnitManager initialized")
 
 func _unhandled_input(event):
-	if not event is InputEventMouseButton:
-		return
-	match event.button_index:
-		MOUSE_BUTTON_LEFT:
-			handle_left_click(event)
-		MOUSE_BUTTON_RIGHT:
-			handle_right_click(event)
+	if event is InputEventMouseButton:
+		match event.button_index:
+			MOUSE_BUTTON_LEFT:
+				if event.pressed:
+					# Begin selection - store the world position where we started dragging
+					is_dragging = true
+					drag_start_world_pos = get_mouse_world_pos()
+					selection_rect.start_drag(event.position)
+					print("Started selection at world pos: ", drag_start_world_pos)
+				elif is_dragging:
+					# End selection
+					select_units_in_rectangle()
+					is_dragging = false
+					selection_rect.visible = false
+			MOUSE_BUTTON_RIGHT:
+				if event.pressed and selected_units.size() > 0:
+					# Move selected units
+					var target = get_mouse_world_pos()
+					command_move(selected_units, target)
 
-func handle_left_click(event: InputEventMouseButton):
-	if event.pressed:
-		start_box_selection(event.position)
-	elif is_dragging:
-		end_box_selection()
+# Get the world position of the mouse, handling zoom correctly
+func get_mouse_world_pos() -> Vector2:
+	var camera = get_viewport().get_camera_2d()
+	if not camera:
+		return get_viewport().get_mouse_position()
+	
+	# In Godot 4, use the correct method to convert screen coordinates to world coordinates
+	var mouse_pos = get_viewport().get_mouse_position()
+	var canvas_transform = get_viewport().get_canvas_transform()
+	
+	# Apply the inverse of the canvas transform to get world coordinates
+	return canvas_transform.affine_inverse() * mouse_pos
 
-func handle_right_click(event: InputEventMouseButton):
-	if event.pressed:
-		command_move(selected_units, get_global_mouse_position())
-		
+# Select all units within the selection rectangle
+func select_units_in_rectangle():
+	# Get current mouse world position
+	var current_world_pos = get_mouse_world_pos()
+	
+	# Create a world-space rectangle from the drag start and current positions
+	var rect_pos = Vector2(
+		min(drag_start_world_pos.x, current_world_pos.x),
+		min(drag_start_world_pos.y, current_world_pos.y)
+	)
+	
+	var rect_size = Vector2(
+		abs(current_world_pos.x - drag_start_world_pos.x),
+		abs(current_world_pos.y - drag_start_world_pos.y)
+	)
+	
+	var selection_rect_world = Rect2(rect_pos, rect_size)
+	
+	print("Selection rectangle in world space: ", selection_rect_world)
+	
+	# Clear the current selection
+	clear_selection()
+	
+	# Find all units within the selection rectangle
+	for unit in get_tree().get_nodes_in_group("units"):
+		if selection_rect_world.has_point(unit.global_position):
+			select_unit(unit)
+			print("Selected unit: ", unit.name, " at position: ", unit.global_position)
+
+# Clear the current selection
 func clear_selection():
 	for unit in selected_units:
 		unit.is_selected = false
 	selected_units.clear()
 
-func select_unit(unit: Unit):
+# Select a single unit
+func select_unit(unit):
 	unit.is_selected = true
 	selected_units.append(unit)
-	print("Selected unit: ", unit.name)
 
-func start_box_selection(mouse_position: Vector2):
-	is_dragging = true
-	selection_rect.start_drag(mouse_position)
+# Command the selected units to move to a target position
+func command_move(units: Array, target_pos: Vector2):
+	var formation_positions = calculate_formation_positions(units.size(), target_pos)
+	
+	for i in units.size():
+		if i < formation_positions.size() and units[i] is Unit:
+			units[i].set_movement_target(formation_positions[i])
 
-func end_box_selection():
-	process_box_selection()
-	is_dragging = false
-	selection_rect.visible = false
-	
-func process_box_selection():
-	clear_selection()
-	
-	var camera = get_viewport().get_camera_2d()
-	var rect = selection_rect.get_selection_rect()
-	var viewport_size = get_viewport().size
-	
-	# Convert to world coordinates
-	var world_start = camera.get_screen_center_position() + (rect.position - Vector2(viewport_size)/2) * camera.zoom
-	var world_size = rect.size * camera.zoom
-	
-	for unit in get_tree().get_nodes_in_group("units"):
-		if Rect2(world_start, world_size).has_point(unit.global_position):
-			select_unit(unit)
-			
+# Calculate formation positions for units
 func calculate_formation_positions(count: int, center: Vector2) -> Array[Vector2]:
 	var positions = []
 	match formation_shape:
@@ -82,13 +114,11 @@ func calculate_grid_formation(count: int, center: Vector2) -> Array[Vector2]:
 	var positions: Array[Vector2] = []
 	var rows = ceil(sqrt(count))
 	var cols = ceil(float(count) / rows)
-	
-	# Convert cols to int for modulo operation
 	var int_cols = int(cols)
 	
 	for i in count:
-		var row = i / int_cols  # Integer division
-		var col = i % int_cols  # Modulo operation
+		var row = i / int_cols
+		var col = i % int_cols
 		var offset = Vector2(
 			(col - (int_cols - 1) / 2.0) * formation_spacing.x,
 			(row - (rows - 1) / 2.0) * formation_spacing.y
@@ -106,7 +136,7 @@ func calculate_line_formation(count: int, center: Vector2) -> Array[Vector2]:
 
 func calculate_wedge_formation(count: int, center: Vector2) -> Array[Vector2]:
 	var positions: Array[Vector2] = []
-	var rows = ceil((sqrt(1 + 8 * count) - 1) / 2)  # Triangular number formula
+	var rows = ceil((sqrt(1 + 8 * count) - 1) / 2)
 	var index = 0
 	
 	for row in rows:
@@ -121,41 +151,3 @@ func calculate_wedge_formation(count: int, center: Vector2) -> Array[Vector2]:
 			if index >= count:
 				return positions
 	return positions
-			
-func move_in_formation(units: Array, center: Vector2):
-	var positions = calculate_formation_positions(units.size(), center)
-	for i in units.size():
-		if units[i] is Unit:
-			units[i].target_pos = positions[i]
-			
-func _find_valid_position(target_pos: Vector2) -> Vector2:
-	var space_state = get_viewport().world_2d.direct_space_state
-	var query = PhysicsShapeQueryParameters2D.new()
-	query.shape = CircleShape2D.new()
-	query.shape.radius = 16.0
-	query.transform = Transform2D(0, target_pos)
-	query.collision_mask = 1  # Units collision layer
-	
-	if space_state.intersect_shape(query).is_empty():
-		return target_pos
-	
-	# Find nearby valid position
-	var attempts = 5
-	for i in attempts:
-		var offset = Vector2(
-			randf_range(-formation_spacing.x, formation_spacing.x),
-			randf_range(-formation_spacing.y, formation_spacing.y)
-		)
-		var new_pos = target_pos + offset
-		query.transform = Transform2D(0, new_pos)
-		if space_state.intersect_shape(query).is_empty():
-			return new_pos
-	return target_pos  # Fallback
-
-func command_move(units: Array[Unit], target_pos: Vector2):
-	var formation_positions = calculate_formation_positions(units.size(), target_pos)
-	for i in units.size():
-		var unit = units[i]
-		var final_pos = _find_valid_position(formation_positions[i])
-		unit.set_movement_target(final_pos)
-
