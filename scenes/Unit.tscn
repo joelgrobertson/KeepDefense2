@@ -1364,8 +1364,9 @@ shape = SubResource("CircleShape2D_yf10n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gpv5l")
-animation = &"idle_7"
+animation = &"walk_4"
 autoplay = "idle_8"
+frame_progress = 0.791756
 
 [node name="StateMachine" parent="." instance=ExtResource("275_12b4i")]
 
@@ -1379,6 +1380,7 @@ autoplay = "idle_8"
 path_desired_distance = 5.0
 target_desired_distance = 5.0
 avoidance_enabled = true
+max_speed = 200.0
 debug_path_custom_color = Color(1, 1, 1, 0.117647)
 debug_path_custom_point_size = 0.0
 

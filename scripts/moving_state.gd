@@ -1,70 +1,67 @@
+# Replace your MovingState class with this smoother implementation
+
 extends State
 class_name MovingState
 
-# Add a variable to track if we're already very close to destination
-var is_very_close := false
+var steering_weight := 0.7  # Slightly reduced for more responsive turning
+var current_velocity := Vector2.ZERO
+var arrival_threshold := 10.0  # Distance to consider "arrived"
 
 func enter():
 	if unit:
 		print("Entering MovingState")
 		unit.nav_agent.target_position = unit.target_pos
-		is_very_close = false
+		current_velocity = Vector2.ZERO
 		update_animation()
 
 func physics_update(delta):
 	if !unit:
 		return
 	
-	# Check if we're already very close to target
+	# Check if we're close enough to destination
 	var distance_to_target = unit.global_position.distance_to(unit.target_pos)
-	
-	# If we're super close, just snap to position and transition
-	if distance_to_target < 5.0:
+	if distance_to_target < arrival_threshold:
 		unit.velocity = Vector2.ZERO
-		print("Very close to target, transitioning to idle")
+		current_velocity = Vector2.ZERO
 		state_transition_requested.emit("IdleState")
 		return
 		
-	var arrived = update_movement()
+	# Update movement and animation
+	update_movement(delta)
 	update_animation()
 	
-	if arrived:
-		# Explicitly zero out velocity when arrived
+	# Check if navigation is finished
+	if unit.nav_agent.is_navigation_finished():
 		unit.velocity = Vector2.ZERO
-		print("Arrived at target")
+		current_velocity = Vector2.ZERO
 		state_transition_requested.emit("IdleState")
 
-func update_movement() -> bool:
+func update_movement(delta):
 	if unit.nav_agent.is_navigation_finished():
-		# Make sure velocity is zeroed out
 		unit.velocity = Vector2.ZERO
-		return true  # Arrived at target
+		current_velocity = Vector2.ZERO
+		return
 	
+	# Get desired direction from navigation
 	var next_position = unit.nav_agent.get_next_path_position()
-	var direction = (next_position - unit.global_position).normalized()
+	var desired_direction = (next_position - unit.global_position).normalized()
 	
-	# Calculate distance to next path point to avoid overshooting
-	var distance_to_next = unit.global_position.distance_to(next_position)
+	# Calculate desired velocity based on full speed (no slowdown)
+	var desired_velocity = desired_direction * unit.speed
 	
-	# If very close to next navigation point, reduce speed
-	var effective_speed = unit.speed
-	if distance_to_next < 20.0:
-		effective_speed = unit.speed * (distance_to_next / 20.0)
-		effective_speed = max(effective_speed, 10.0)  # Don't go too slow
+	# Smoothly steer towards the desired velocity
+	current_velocity = current_velocity.lerp(desired_velocity, 1.0 - steering_weight)
 	
-	unit.velocity = direction * effective_speed
-	unit.last_move_direction = direction
+	# Apply the calculated velocity
+	unit.velocity = current_velocity
+	unit.last_move_direction = current_velocity.normalized()
 	unit.move_and_slide()
-	
-	# Check if we're close enough to the final target
-	if unit.global_position.distance_to(unit.target_pos) < 10.0:
-		return true
-		
-	return false  # Still moving
 
 func update_animation():
-	if unit:
+	if unit and unit.velocity.length() > 0.1:
 		var anim_name = "walk_%d" % unit.calculate_direction_index(unit.last_move_direction)
+		
+		# Only change animation if direction changed
 		if anim_name != unit.current_animation:
 			unit.animated_sprite.play(anim_name)
 			unit.current_animation = anim_name

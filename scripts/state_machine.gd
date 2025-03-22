@@ -9,6 +9,7 @@ func init(unit_ref):
 	# Initialize states with unit reference
 	for child in get_children():
 		if child is State:
+			print("State", child.name, "found Unit:", unit_ref.name)
 			child.unit = unit_ref
 			child.state_transition_requested.connect(_on_state_transition)
 	
