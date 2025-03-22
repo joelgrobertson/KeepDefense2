@@ -1,15 +1,14 @@
-# Replace your MovingState class with this smoother implementation
-
 extends State
 class_name MovingState
 
-var steering_weight := 0.7  # Slightly reduced for more responsive turning
+# Movement smoothing properties
+var steering_weight := 0.7
 var current_velocity := Vector2.ZERO
-var arrival_threshold := 10.0  # Distance to consider "arrived"
+var arrival_threshold := 10.0
 
 func enter():
 	if unit:
-		print("Entering MovingState")
+		print(unit.name, " entering MovingState")
 		unit.nav_agent.target_position = unit.target_pos
 		current_velocity = Vector2.ZERO
 		update_animation()
@@ -55,13 +54,14 @@ func update_movement(delta):
 	# Apply the calculated velocity
 	unit.velocity = current_velocity
 	unit.last_move_direction = current_velocity.normalized()
+	
+	# Move the unit - this should be here, not in Unit._physics_process
 	unit.move_and_slide()
 
 func update_animation():
-	if unit and unit.velocity.length() > 0.1:
+	if unit:
+		# Update animation based on movement direction
 		var anim_name = "walk_%d" % unit.calculate_direction_index(unit.last_move_direction)
-		
-		# Only change animation if direction changed
 		if anim_name != unit.current_animation:
 			unit.animated_sprite.play(anim_name)
 			unit.current_animation = anim_name

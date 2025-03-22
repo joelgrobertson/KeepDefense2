@@ -7,18 +7,13 @@ var can_transition := true
 
 func enter():
 	if unit:
-		print("Entering IdleState")
+		print(unit.name, " entering IdleState")
 		# Ensure velocity is zeroed when entering idle state
 		unit.velocity = Vector2.ZERO
 		update_animation()
 		
-		# When entering idle state at destination, update target_pos to current position
-		# This prevents oscillation due to small position differences
-		if unit.global_position.distance_to(unit.target_pos) < 10.0:
-			unit.target_pos = unit.global_position
-			
 		# Reset cooldown
-		transition_cooldown = 0.5  # Half-second cooldown
+		transition_cooldown = 0.2  # Reduced cooldown time
 		can_transition = false
 
 func physics_update(delta):
@@ -31,12 +26,11 @@ func physics_update(delta):
 		if transition_cooldown <= 0:
 			can_transition = true
 	
-	# Apply zero velocity in physics update to ensure the unit stays in place
+	# Ensure the unit stays in place
 	unit.velocity = Vector2.ZERO
 	
 	# Check for movement commands with increased threshold
 	if can_transition and unit.global_position.distance_to(unit.target_pos) > 10.0:
-		print("Movement command received, transitioning to move")
 		state_transition_requested.emit("MovingState")
 
 func update_animation():
