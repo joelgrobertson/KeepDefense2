@@ -8,30 +8,59 @@ var drag_start_world_pos := Vector2.ZERO
 
 # Formation parameters
 @export var formation_spacing := Vector2(50, 50)
-@export var formation_shape := "grid"  # Options: "grid", "line", "wedge"
+@export var formation_shape := "line"  # Options: "grid", "line"
 
-func _ready():
-	set_process_unhandled_input(true)
 
 func _unhandled_input(event):
-	if event is InputEventMouseButton:
-		match event.button_index:
-			MOUSE_BUTTON_LEFT:
-				if event.pressed:
-					# Begin selection
-					is_dragging = true
-					drag_start_world_pos = get_mouse_world_pos()
-					selection_rect.start_drag(event.position)
-				elif is_dragging:
-					# End selection
-					select_units_in_rectangle()
-					is_dragging = false
-					selection_rect.visible = false
-			MOUSE_BUTTON_RIGHT:
-				if event.pressed and selected_units.size() > 0:
-					# Move selected units
-					var target = get_mouse_world_pos()
-					command_move(selected_units, target)
+	# Handle selection start (left mouse button press)
+	if Input.is_action_just_pressed("select_units"):
+		start_selection_drag()
+	
+	# Handle selection end (left mouse button release)
+	elif Input.is_action_just_released("select_units") and is_dragging:
+		finish_selection_drag()
+	
+	# Handle unit commands (right mouse button)
+	elif Input.is_action_just_pressed("command_units") and selected_units.size() > 0:
+		command_units_at_cursor()
+		
+	# You could add more actions like:
+	elif Input.is_action_just_pressed("select_all_units"):
+		select_all_units()
+
+# These helper functions keep your code organized while remaining in UnitManager
+func start_selection_drag():
+	is_dragging = true
+	drag_start_world_pos = get_mouse_world_pos()
+	selection_rect.start_drag(get_viewport().get_mouse_position())
+
+func finish_selection_drag():
+	select_units_in_rectangle()
+	is_dragging = false
+	selection_rect.visible = false
+
+func command_units_at_cursor():
+	var target = get_mouse_world_pos()
+	var clicked_object = get_object_under_cursor()
+	
+	#if clicked_object is Enemy:
+		#command_attack(selected_units, clicked_object)
+	#elif clicked_object is Castle:
+		#command_interact_with_castle(selected_units, clicked_object)
+	#else:
+	command_move(selected_units, target)
+
+# Function to detect what's under the cursor
+func get_object_under_cursor():
+	var space_state = get_viewport().get_world_2d().direct_space_state
+	var query = PhysicsPointQueryParameters2D.new()
+	query.position = get_mouse_world_pos()
+	query.collision_mask = 1  # Adjust as needed
+	var result = space_state.intersect_point(query, 1)
+	
+	if result.size() > 0:
+		return result[0].collider
+	return null
 
 # Get the world position of the mouse, handling zoom correctly
 func get_mouse_world_pos() -> Vector2:
@@ -64,6 +93,7 @@ func select_units_in_rectangle():
 
 	# Clear the current selection
 	clear_selection()
+	
 	# Find all units within the selection rectangle
 	for unit in get_tree().get_nodes_in_group("units"):
 		if selection_rect_world.has_point(unit.global_position):
@@ -80,6 +110,11 @@ func clear_selection():
 func select_unit(unit):
 	unit.is_selected = true
 	selected_units.append(unit)
+	
+func select_all_units():
+	clear_selection()
+	for unit in get_tree().get_nodes_in_group("units"):
+		select_unit(unit)
 
 # Command the selected unit(s) to move to a target position
 func command_move(units: Array, target_pos: Vector2):

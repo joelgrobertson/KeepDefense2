@@ -8,7 +8,6 @@ class_name Unit
 
 @export var speed: float = 115.0
 
-var target_pos = Vector2.ZERO
 var current_animation := ""
 var last_move_direction: Vector2 = Vector2(0, 1)
 
@@ -22,11 +21,9 @@ var is_selected := false:
 func _ready():
 	print(name, " initialized")
 	state_machine.init(self)
-	target_pos = global_position
 
 # Set a new movement target and transition to moving state
 func set_movement_target(pos: Vector2):
-	target_pos = pos
 	nav_agent.target_position = pos
 	state_machine.current_state.state_transition_requested.emit("MovingState")
 
