@@ -6,10 +6,30 @@ var selected_units := []
 var is_dragging := false
 var drag_start_world_pos := Vector2.ZERO
 
+@onready var ui_control = $"../UIControl"
+@onready var top_bar = $"../CanvasLayer/TopBar"
+
 # Formation parameters
 @export var formation_spacing := Vector2(50, 50)
 @export var formation_shape := "line"  # Options: "grid", "line"
 
+func _ready():
+	top_bar.formation_changed.connect(_on_formation_selected)
+		
+func _on_formation_selected(new_formation):
+	formation_shape = new_formation
+	print("Formation changed to: ", formation_shape)
+	
+	# Optional: Update existing selected units
+	if selected_units.size() > 0:
+		var center = get_average_position(selected_units)
+		command_move(selected_units, center)
+
+func get_average_position(units: Array) -> Vector2:
+	var total = Vector2.ZERO
+	for unit in units:
+		total += unit.global_position
+	return total / units.size()
 
 func _unhandled_input(event):
 	# Handle selection start (left mouse button press)

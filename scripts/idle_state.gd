@@ -2,7 +2,8 @@ extends State
 class_name IdleState
 
 func enter():
-	print(unit.name, " entering IdleState")
+	#print(unit.name, " entering IdleState")
+	return
 
 func physics_update(delta):
 	update_animation()

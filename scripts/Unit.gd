@@ -21,6 +21,13 @@ var is_selected := false:
 func _ready():
 	print(name, " initialized")
 	state_machine.init(self)
+	
+	nav_agent.velocity_computed.connect(_on_velocity_computed)
+	
+# This function will be called when the NavigationAgent computes a new avoidance velocity
+func _on_velocity_computed(safe_velocity: Vector2):
+	velocity = safe_velocity
+	move_and_slide()
 
 # Set a new movement target and transition to moving state
 func set_movement_target(pos: Vector2):

@@ -1339,6 +1339,7 @@ animations = [{
 }]
 
 [node name="Unit" type="CharacterBody2D" groups=["units"]]
+y_sort_enabled = true
 collision_mask = 15
 motion_mode = 1
 wall_min_slide_angle = 0.0
@@ -1346,7 +1347,7 @@ script = ExtResource("1_b2d1e")
 
 [node name="SelectionHighlight" type="Sprite2D" parent="."]
 visible = false
-show_behind_parent = true
+visibility_layer = 2
 scale = Vector2(1.29302, 1.33713)
 texture = ExtResource("2_s73kd")
 
@@ -1365,7 +1366,8 @@ frame_progress = 0.791756
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_max_distance = 200.0
 avoidance_enabled = true
-radius = 100.0
+radius = 15.0
+neighbor_distance = 100.0
 max_speed = 200.0
 debug_enabled = true
 debug_path_custom_color = Color(1, 1, 1, 0.117647)

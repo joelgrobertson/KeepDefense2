@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cji1hothwr2e8"]
+
+[ext_resource type="Script" path="res://scripts/top_bar.gd" id="1_x7arl"]
+
+[sub_resource type="Theme" id="Theme_4clyh"]
+
+[node name="TopBar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_x7arl")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 13.0
+offset_top = 13.0
+offset_right = 147.0
+offset_bottom = 36.0
+theme = SubResource("Theme_4clyh")
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Formation:"
+vertical_alignment = 1
+
+[node name="FormationDropdown" type="OptionButton" parent="HBoxContainer"]
+layout_mode = 2
