@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://blll03l5mktk"]
+[gd_scene load_steps=48 format=3 uid="uid://blll03l5mktk"]
 
 [ext_resource type="PackedScene" uid="uid://cji1hothwr2e8" path="res://scenes/top_bar.tscn" id="1_c7jd5"]
 [ext_resource type="Texture2D" uid="uid://d4k1m0s101ba6" path="res://assets/environment/ground_stone1.png" id="1_ptx2r"]
@@ -22,6 +22,9 @@
 [ext_resource type="Texture2D" uid="uid://qcva37jvu45h" path="res://assets/prop/wall1/S/wall1_S_270.0_0.png" id="14_cvxr1"]
 [ext_resource type="Texture2D" uid="uid://cx3iq5sadlrou" path="res://assets/prop/wall1/E/wall1_E_0.0_0.png" id="15_xwvc6"]
 [ext_resource type="Script" path="res://scripts/TileMap.gd" id="16_g1x1f"]
+[ext_resource type="PackedScene" uid="uid://455ytoxyqdwt" path="res://scenes/castle.tscn" id="22_bmn2u"]
+[ext_resource type="Script" path="res://scripts/EnemySpawner.gd" id="23_487dg"]
+[ext_resource type="PackedScene" uid="uid://c215q824vywyy" path="res://scenes/Enemy.tscn" id="24_5ffa2"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ylnvl"]
 
@@ -2988,6 +2991,9 @@ source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="Main" type="Node"]
 
+[node name="Camera" type="Camera2D" parent="."]
+script = ExtResource("3_6jyyi")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="TopBar" parent="CanvasLayer" instance=ExtResource("1_c7jd5")]
@@ -3021,8 +3027,12 @@ mouse_filter = 2
 color = Color(1, 1, 1, 0.396078)
 script = ExtResource("3_168dj")
 
-[node name="Camera" type="Camera2D" parent="."]
-script = ExtResource("3_6jyyi")
+[node name="Castle" parent="." instance=ExtResource("22_bmn2u")]
+position = Vector2(361, 222)
+
+[node name="EnemySpawner" type="Node2D" parent="."]
+script = ExtResource("23_487dg")
+enemy_scene = ExtResource("24_5ffa2")
 
 [node name="Units" type="CanvasGroup" parent="."]
 y_sort_enabled = true
