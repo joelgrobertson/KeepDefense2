@@ -7,8 +7,7 @@ var attack_cooldown := 1.0
 func enter():
 	if unit:
 		print(unit.name, " Entering AttackingState with ", unit.current_target.name)
-		attack_timer = 0.0
-		update_animation()
+		attack_timer = 1.5
 
 func exit():
 	if unit:
@@ -16,30 +15,34 @@ func exit():
 		unit.current_target = null
 
 func physics_update(delta):
-	if !unit:
-		return
 		
 	if unit.current_target == null or !is_instance_valid(unit.current_target):
-		emit_signal("state_transition_requested", "IdleState")
+		state_transition_requested.emit("IdleState")
 		return
 		
-	# Check if target is in range
-	if unit.global_position.distance_to(unit.current_target.global_position) > unit.get_combat_range():
-		# If target moved out of range, transition to MovingState
-		unit.target_pos = unit.current_target.global_position
+ # Get distance to target
+	var distance = unit.global_position.distance_to(unit.current_target.global_position)
+	
+	# If we're in attack range, stop and attack
+	if distance <= unit.get_combat_range():
+		# Completely stop movement
+		unit.velocity = Vector2.ZERO
+		
+		# Face the target
+		var direction = (unit.current_target.global_position - unit.global_position).normalized()
+		unit.last_move_direction = direction
+		
+		# Attack if cooldown expired
+		attack_timer += delta
+		if attack_timer >= unit.attack_cooldown:
+			perform_attack()
+			attack_timer = 0.0
+			
+		update_animation()
+	else:
+		# If target moved away, we need to get closer
+		unit.nav_agent.target_position = unit.current_target.global_position
 		emit_signal("state_transition_requested", "MovingState")
-		return
-	
-	# Face the target
-	var direction = (unit.current_target.global_position - unit.global_position).normalized()
-	unit.last_move_direction = direction
-	update_animation()
-	
-	# Attack on cooldown
-	attack_timer += delta
-	if attack_timer >= attack_cooldown:
-		perform_attack()
-		attack_timer = 0.0
 
 func perform_attack():
 	if unit and unit.current_target and is_instance_valid(unit.current_target):
