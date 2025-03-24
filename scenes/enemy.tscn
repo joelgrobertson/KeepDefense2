@@ -277,7 +277,7 @@
 [ext_resource type="Texture2D" uid="uid://u3ulx8o056kj" path="res://assets/enemy/skeleton/skeleton_default_walk/SSW/skeleton_default_walk_SSW_247.5_7.png" id="275_rbeuq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l7tnb"]
-radius = 9.58774
+radius = 8.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_thju6"]
 animations = [{
@@ -1339,9 +1339,9 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i62tv"]
-radius = 68.0074
+radius = 50.0
 
-[node name="Enemy" type="CharacterBody2D" groups=["units"]]
+[node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
 y_sort_enabled = true
 collision_mask = 15
 motion_mode = 1
@@ -1358,24 +1358,27 @@ texture = ExtResource("2_nx5xm")
 scale = Vector2(1.0486, 1.01047)
 shape = SubResource("CircleShape2D_l7tnb")
 
-[node name="StateMachine" parent="." instance=ExtResource("275_byd13")]
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-path_max_distance = 200.0
-avoidance_enabled = true
-radius = 15.0
-neighbor_distance = 100.0
-max_speed = 200.0
-debug_enabled = true
-debug_path_custom_color = Color(1, 1, 1, 0.117647)
-debug_path_custom_point_size = 0.0
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_thju6")
 animation = &"idle_8"
 autoplay = "idle_8"
 
+[node name="StateMachine" parent="." instance=ExtResource("275_byd13")]
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_max_distance = 200.0
+avoidance_enabled = true
+radius = 12.0
+neighbor_distance = 25.0
+max_speed = 200.0
+avoidance_layers = 2
+avoidance_mask = 2
+debug_path_custom_color = Color(1, 1, 1, 0.117647)
+debug_path_custom_point_size = 0.0
+
 [node name="CombatArea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CombatArea"]
 shape = SubResource("CircleShape2D_i62tv")

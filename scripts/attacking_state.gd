@@ -6,7 +6,7 @@ var attack_cooldown := 1.0
 
 func enter():
 	if unit:
-		print("Entering AttackingState")
+		print(unit.name, " Entering AttackingState with ", unit.current_target.name)
 		attack_timer = 0.0
 		update_animation()
 

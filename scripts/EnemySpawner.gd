@@ -48,12 +48,12 @@ func get_random_spawn_position() -> Vector2:
 	return spawn_pos
 
 func spawn_enemy(position: Vector2):
+	enemy_count += 1
 	var enemy_instance = enemy_scene.instantiate()
 	enemy_instance.global_position = position
+	enemy_instance.name = "Enemy" + str(enemy_count)
 	add_child(enemy_instance)
 	
-	# Track enemy count and connect to destroyed signal
-	enemy_count += 1
 	# Connect to the tree_exiting signal to decrement enemy count
 	enemy_instance.tree_exiting.connect(_on_enemy_destroyed)
 
