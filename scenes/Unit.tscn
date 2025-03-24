@@ -1,4 +1,4 @@
-[gd_scene load_steps=278 format=3 uid="uid://dosxxdu6vitt7"]
+[gd_scene load_steps=279 format=3 uid="uid://dosxxdu6vitt7"]
 
 [ext_resource type="Script" path="res://scripts/Unit.gd" id="1_b2d1e"]
 [ext_resource type="Texture2D" uid="uid://bqveecp4b6gus" path="res://assets/user interface/highlight/highlight_yellow.png" id="2_s73kd"]
@@ -277,7 +277,7 @@
 [ext_resource type="PackedScene" uid="uid://dl6recigflrik" path="res://scenes/StateMachine.tscn" id="275_12b4i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l7tnb"]
-radius = 9.58774
+radius = 8.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gpv5l"]
 animations = [{
@@ -1338,6 +1338,9 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_tftl1"]
+radius = 50.0
+
 [node name="Unit" type="CharacterBody2D" groups=["units"]]
 y_sort_enabled = true
 collision_mask = 15
@@ -1366,9 +1369,14 @@ frame_progress = 0.791756
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_max_distance = 200.0
 avoidance_enabled = true
-radius = 15.0
-neighbor_distance = 100.0
+neighbor_distance = 20.0
 max_speed = 200.0
-debug_enabled = true
 debug_path_custom_color = Color(1, 1, 1, 0.117647)
 debug_path_custom_point_size = 0.0
+
+[node name="CombatArea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CombatArea"]
+shape = SubResource("CircleShape2D_tftl1")

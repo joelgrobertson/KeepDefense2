@@ -6,15 +6,12 @@ var selected_units := []
 var is_dragging := false
 var drag_start_world_pos := Vector2.ZERO
 
-@onready var ui_control = $"../UIControl"
-@onready var top_bar = $"../CanvasLayer/TopBar"
-
 # Formation parameters
 @export var formation_spacing := Vector2(50, 50)
 @export var formation_shape := "line"  # Options: "grid", "line"
 
 func _ready():
-	top_bar.formation_changed.connect(_on_formation_selected)
+	return
 		
 func _on_formation_selected(new_formation):
 	formation_shape = new_formation
