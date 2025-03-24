@@ -1,68 +1,84 @@
-# Combatant.gd (inherited by both Unit and Enemy)
+# Combatant.gd
 class_name Combatant
 extends CharacterBody2D
 
 @export var health := 100.0
 @export var attack_damage := 10.0
 @export var attack_cooldown := 1.0
+@export var speed := 80.0
 
-var current_target: Node = null
-var attack_timer := 0.0
+# Common properties
+var current_target = null
 var is_attacking := false
+var last_move_direction := Vector2.DOWN
+var current_animation := ""
+var attack_timer := 0.0
 
-var combat_cooldown := 1.0
-var combat_timer := 0.0
+# References
+@onready var animated_sprite = $AnimatedSprite2D
+@onready var nav_agent = $NavigationAgent2D
+@onready var state_machine = $StateMachine
 
+func _ready():
+	# Initialize the state machine with self-reference
+	state_machine.init(self)
+	
+	# Connect navigation signals
+	nav_agent.velocity_computed.connect(_on_velocity_computed)
 
+# Handle taking damage
 func take_damage(amount: float):
 	health -= amount
+	print(name, " took damage: ", amount, ", health: ", health)
+	
 	if health <= 0:
 		queue_free()
 
-func _process(delta):
-	if is_attacking:
-		combat_timer += delta
-		if combat_timer >= combat_cooldown:
-			if is_instance_valid(current_target) && global_position.distance_to(current_target.global_position) <= get_combat_range():
-				perform_attack()
-				combat_timer = 0.0
-			else:
-				end_combat()
-				
-func get_combat_range() -> float:
-	return $CombatArea.shape.radius * max($CombatArea.scale.x, $CombatArea.scale.y)
-			
-func start_combat(target: Node):
-	if !is_attacking or current_target != target:
-		is_attacking = true
-		current_target = target
-		print(name, " started combat with ", target.name)
-		
-		# Stop movement immediately
-		velocity = Vector2.ZERO
-		
-		if target is Combatant:
-			target.start_combat(self)
-
-func perform_attack():
-	if is_instance_valid(current_target) and current_target.has_method("take_damage"):
-		current_target.take_damage(attack_damage)
-		play_attack_animation(current_target.global_position)
-	
-	# Break combat if target is dead/destroyed
-	if !is_instance_valid(current_target):
-		end_combat()
-		
-func end_combat():
-	is_attacking = false
-	current_target = null
-	
-	print(name, " ended combat")
-
-func play_attack_animation(target_position: Vector2):
-	var direction = (target_position - global_position).normalized()
-	var angle_rad = atan2(direction.x, -direction.y)
+# Calculate direction for animations
+func calculate_direction_index(direction: Vector2) -> int:
+	var angle_rad = atan2(direction.y, direction.x)
 	var angle_deg = rad_to_deg(angle_rad)
-	if angle_deg < 0: angle_deg += 360
-	var index = wrapi(int(round(angle_deg / 22.5)), 0, 16)
-	$AnimatedSprite2D.play("attack_%d" % index)
+	angle_deg += 90
+	return wrapi(int(round(angle_deg / 22.5)), 0, 16)
+
+# Get combat range
+func get_combat_range() -> float:
+	return $CombatArea/CollisionShape2D.shape.radius
+
+# Start combat with a target
+func start_combat(target):
+	if !is_attacking:
+		print(name, " starting combat with ", target.name)
+		current_target = target
+		is_attacking = true
+		# Force state change
+		if state_machine:
+			state_machine.current_state.state_transition_requested.emit("AttackingState")
+
+# Navigation callback
+func _on_velocity_computed(safe_velocity: Vector2):
+	velocity = safe_velocity
+	move_and_slide()
+	
+func set_movement_target(pos: Vector2):
+	nav_agent.target_position = pos
+	state_machine.current_state.state_transition_requested.emit("MovingState")
+
+# Helper functions for animations
+func play_attack_animation():
+	var anim_name = "attack_%d" % calculate_direction_index(last_move_direction)
+	if anim_name != current_animation:
+		animated_sprite.play(anim_name)
+		current_animation = anim_name
+
+func play_idle_animation():
+	var anim_name = "idle_%d" % calculate_direction_index(last_move_direction)
+	if anim_name != current_animation:
+		animated_sprite.play(anim_name)
+		current_animation = anim_name
+
+func play_walk_animation():
+	var anim_name = "walk_%d" % calculate_direction_index(last_move_direction)
+	if anim_name != current_animation:
+		animated_sprite.play(anim_name)
+		current_animation = anim_name

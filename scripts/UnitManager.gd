@@ -1,3 +1,4 @@
+# UnitManager.gd
 extends Node
 
 @onready var selection_rect = %SelectionRect
@@ -11,8 +12,11 @@ var drag_start_world_pos := Vector2.ZERO
 @export var formation_shape := "line"  # Options: "grid", "line"
 
 func _ready():
-	return
-		
+	# Connect to formation dropdown if it exists
+	var top_bar = get_tree().get_first_node_in_group("top_bar")
+	if top_bar and top_bar.has_signal("formation_changed"):
+		top_bar.formation_changed.connect(_on_formation_selected)
+
 func _on_formation_selected(new_formation):
 	formation_shape = new_formation
 	print("Formation changed to: ", formation_shape)
@@ -60,12 +64,20 @@ func command_units_at_cursor():
 	var target = get_mouse_world_pos()
 	var clicked_object = get_object_under_cursor()
 	
-	#if clicked_object is Enemy:
-		#command_attack(selected_units, clicked_object)
-	#elif clicked_object is Castle:
-		#command_interact_with_castle(selected_units, clicked_object)
-	#else:
-	command_move(selected_units, target)
+	if clicked_object is Enemy:
+		command_attack(selected_units, clicked_object)
+	elif clicked_object is Castle:
+		# Units should defend the castle
+		var defend_pos = clicked_object.global_position + Vector2(0, 100)  # Position near castle
+		command_move(selected_units, defend_pos)
+	else:
+		command_move(selected_units, target)
+
+# Command units to attack a target
+func command_attack(units: Array, target: Node):
+	for unit in units:
+		if unit is Unit:
+			unit.start_combat(target)
 
 # Function to detect what's under the cursor
 func get_object_under_cursor():
@@ -139,7 +151,7 @@ func command_move(units: Array, target_pos: Vector2):
 	
 	for i in units.size():
 		if i < formation_positions.size() and units[i] is Unit:
-			print("Commanding move for: " , units[i].name)
+			print("Commanding move for: ", units[i].name)
 			units[i].set_movement_target(formation_positions[i])
 
 # Calculate formation positions for units

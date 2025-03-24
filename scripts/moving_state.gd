@@ -1,35 +1,35 @@
-extends State
+# moving_state.gd
 class_name MovingState
-
-# Movement smoothing properties
-var steering_weight := 0.7
-var current_velocity := Vector2.ZERO
+extends State
 
 func enter():
 	print(unit.name, " moving...")
 
+# moving_state.gd - Add stricter validation
 func physics_update(delta):
-	# Check if navigation is finished, if so enter Idle
+	# Always check if unit still exists
+	if !unit:
+		return
+		
+	# Check if navigation is finished
 	if unit.nav_agent.is_navigation_finished():
 		unit.velocity = Vector2.ZERO
-		current_velocity = Vector2.ZERO
 		print(unit.name, " arrived.")
 		state_transition_requested.emit("IdleState")
 		return
 	
+	# If we have a combat target, prioritize following it (with validation)
+	if unit.current_target and is_instance_valid(unit.current_target):
+		unit.nav_agent.target_position = unit.current_target.global_position
+	
 	# Get the next path position and calculate the direction
 	var next_position = unit.nav_agent.get_next_path_position()
-	var current_position = unit.global_position
-	var new_velocity = (next_position - current_position).normalized() * unit.speed
+	var new_velocity = (next_position - unit.global_position).normalized() * unit.speed
 	
-	# Use the built-in avoidance calculations
+	# Set the velocity for avoidance calculations
 	unit.nav_agent.set_velocity(new_velocity)
 	
-	# Animation update
+	# Update animation
 	if new_velocity.length() > 0.1:
 		unit.last_move_direction = new_velocity.normalized()
-		var anim_name = "walk_%d" % unit.calculate_direction_index(unit.last_move_direction)
-		if anim_name != unit.current_animation:
-			unit.animated_sprite.play(anim_name)
-			unit.current_animation = anim_name
-
+		unit.play_walk_animation()

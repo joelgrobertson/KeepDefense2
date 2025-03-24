@@ -1,114 +1,67 @@
 # Enemy.gd
-extends CharacterBody2D
-
-
-@onready var animated_sprite = $AnimatedSprite2D
-@onready var nav_agent = $NavigationAgent2D
-@onready var state_machine = $StateMachine
-@onready var combat_area = $CombatArea
-
-@export var speed: float = 80.0
-@export var health: float = 100.0
-@export var attack_damage: float = 10.0
-@export var attack_cooldown: float = 1.0
-
-var target_pos := Vector2.ZERO
-var current_animation := ""
-var last_move_direction: Vector2 = Vector2(0, 1)
-var is_attacking := false
-var current_target = null
+class_name Enemy
+extends Combatant
 
 func _ready():
-	print(name, " initialized")
+	super._ready()
 	
-	# Add to appropriate groups
+	# Add to groups
 	add_to_group("enemies")
 	$CombatArea.add_to_group("enemy_combat_areas")
 	$CombatArea.add_to_group("combat_areas")
 	
-	# Initialize the state machine
-	state_machine.init(self)
+	# Make sure combat area detection is connected
+	$CombatArea.connect("area_entered", _on_combat_area_area_entered)
 	
-	# Find the castle automatically
+	# Wait a bit before targeting castle
+	await get_tree().create_timer(0.2).timeout
+	target_castle()
+
+# Basic castle targeting
+func target_castle():
+	# Don't override combat
+	if is_attacking or current_target != null:
+		return
+		
 	var castle = get_tree().get_first_node_in_group("castle")
-	if castle:
-		# Set initial target position
-		target_pos = castle.global_position
-		# Set initial navigation target
-		nav_agent.target_position = target_pos
-		
-		# Explicitly start in moving state (wait one frame for state machine setup)
-		await get_tree().process_frame
+	if castle and is_instance_valid(castle):
+		nav_agent.target_position = castle.global_position
 		state_machine.current_state.state_transition_requested.emit("MovingState")
-	else:
-		print("ERROR: No castle found for enemy to target!")
-		
-	nav_agent.velocity_computed.connect(_on_velocity_computed)
-	
-# This function will be called when the NavigationAgent computes a new avoidance velocity
-func _on_velocity_computed(safe_velocity: Vector2):
-	velocity = safe_velocity
-	move_and_slide()
 
-# Called when the enemy gets hit
-func take_damage(amount: float):
-	health -= amount
-	print(name, " took damage: ", amount, ", remaining health: ", health)
-	
-	if health <= 0:
-		print(name, " destroyed!")
-		queue_free()
-
-# Convert a direction vector to a directional index for animations (0-15)
-func calculate_direction_index(direction: Vector2) -> int:
-	var angle_rad = atan2(direction.y, direction.x)
-	var angle_deg = rad_to_deg(angle_rad)
-	angle_deg += 90
-	return wrapi(int(round(angle_deg / 22.5)), 0, 16)
-
-# Get combat range
-func get_combat_range() -> float:
-	return $CombatArea/CollisionShape2D.shape.radius
-
-# Physics process for updating enemy behavior
-func _physics_process(delta):
-	# If not attacking, update the target position if needed
-	if !is_attacking:
-		var castle = get_tree().get_first_node_in_group("castle")
-		if castle and is_instance_valid(castle):
-			# Only update if significantly changed
-			if castle.global_position.distance_to(target_pos) > 10:
-				target_pos = castle.global_position
-				nav_agent.target_position = target_pos
-
-# Called when enemy's combat area enters another combat area
+# The key issue - this needs to work reliably!
 func _on_combat_area_area_entered(area: Area2D):
+	# Debug print to verify this gets called
+	print(name, " detected area: ", area.name, " in group: ", area.get_groups())
+	
+	# Skip if already fighting
 	if is_attacking:
 		return
 		
-	# Check if area is a combat area
-	if !area.is_in_group("combat_areas"):
-		return
-		
-	# If it's an enemy combat area, ignore it
-	if area.is_in_group("enemy_combat_areas"):
-		return
-		
-	# If it's a unit combat area, engage with the unit
+	# Detection logic
 	if area.is_in_group("unit_combat_areas"):
 		var unit = area.get_parent()
-		print(name, " starting combat with unit: ", unit.name)
-		start_combat(unit)
-	
-	# If it's the castle, engage with the castle
+		if unit and is_instance_valid(unit):
+			print(name, " engaging unit: ", unit.name)
+			engage_target(unit)
 	elif area.is_in_group("castle"):
 		var castle = area.get_parent()
-		print(name, " starting combat with castle!")
-		start_combat(castle)
+		if castle and is_instance_valid(castle):
+			print(name, " engaging castle!")
+			engage_target(castle)
 
-# Start combat with a target
-func start_combat(target):
-	if !is_attacking:
+# Better combat engagement with direct state change
+func engage_target(target):
+	if target and is_instance_valid(target):
 		current_target = target
 		is_attacking = true
-		state_machine.current_state.state_transition_requested.emit("AttackingState")
+		# Force immediate state change - bypass normal transitions
+		if state_machine and state_machine.current_state:
+			state_machine.current_state.exit()
+			state_machine._on_state_transition("AttackingState")
+
+# Resume castle targeting when we exit combat
+func _physics_process(delta):
+	# If not in combat, make sure we're heading to the castle
+	if !is_attacking and current_target == null:
+		if state_machine.current_state.name != "MovingState":
+			target_castle()

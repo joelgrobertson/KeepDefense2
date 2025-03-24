@@ -1,6 +1,6 @@
 # Castle.gd
-extends Area2D
 class_name Castle
+extends Area2D
 
 signal castle_destroyed
 

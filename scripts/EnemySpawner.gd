@@ -42,9 +42,6 @@ func get_random_spawn_position() -> Vector2:
 	var distance = randf_range(spawn_radius_min, spawn_radius_max)
 	var spawn_pos = castle.global_position + Vector2(cos(angle), sin(angle)) * distance
 	
-	# Validate position (optional: check if it's on valid navigation mesh)
-	# You could add additional checks here
-	
 	return spawn_pos
 
 func spawn_enemy(position: Vector2):
