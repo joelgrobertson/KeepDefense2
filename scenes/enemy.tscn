@@ -1,6 +1,7 @@
-[gd_scene load_steps=407 format=3 uid="uid://c215q824vywyy"]
+[gd_scene load_steps=408 format=3 uid="uid://c215q824vywyy"]
 
 [ext_resource type="Script" path="res://scripts/Enemy.gd" id="1_5bqkq"]
+[ext_resource type="PackedScene" uid="uid://dvn0db884hfb3" path="res://scenes/health_bar.tscn" id="2_bp2hs"]
 [ext_resource type="Texture2D" uid="uid://bqveecp4b6gus" path="res://assets/user interface/highlight/highlight_yellow.png" id="2_nx5xm"]
 [ext_resource type="Texture2D" uid="uid://chwvgcek08jvx" path="res://assets/enemy/skeleton/skeleton_default_attack/N/skeleton_default_attack_N_90.0_0.png" id="4_4qv7w"]
 [ext_resource type="Texture2D" uid="uid://c8kdlsanb07x7" path="res://assets/enemy/skeleton/skeleton_default_attack/N/skeleton_default_attack_N_90.0_1.png" id="5_lhbyt"]
@@ -898,7 +899,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("138_320xw")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_0",
 "speed": 12.0
 }, {
@@ -927,7 +928,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("146_d6eiy")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_1",
 "speed": 12.0
 }, {
@@ -956,7 +957,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("154_4nvb5")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_10",
 "speed": 12.0
 }, {
@@ -985,7 +986,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("162_ngpx7")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_11",
 "speed": 12.0
 }, {
@@ -1014,7 +1015,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("170_bulvu")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_12",
 "speed": 12.0
 }, {
@@ -1043,7 +1044,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("178_uuak1")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_13",
 "speed": 12.0
 }, {
@@ -1072,7 +1073,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("186_cewr0")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_14",
 "speed": 12.0
 }, {
@@ -1101,7 +1102,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("194_r7335")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_15",
 "speed": 12.0
 }, {
@@ -1130,7 +1131,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("202_x7e4x")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_2",
 "speed": 12.0
 }, {
@@ -1159,7 +1160,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("210_vncvj")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_3",
 "speed": 12.0
 }, {
@@ -1188,7 +1189,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("218_amm2v")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_4",
 "speed": 12.0
 }, {
@@ -1217,7 +1218,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("226_gif8c")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_5",
 "speed": 12.0
 }, {
@@ -1246,7 +1247,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("234_hjo8r")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_6",
 "speed": 12.0
 }, {
@@ -1275,7 +1276,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("242_w1r4d")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_7",
 "speed": 12.0
 }, {
@@ -1304,7 +1305,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("250_5kvm8")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_8",
 "speed": 12.0
 }, {
@@ -1333,7 +1334,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("258_v3q8k")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_9",
 "speed": 12.0
 }, {
@@ -1941,6 +1942,8 @@ motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_5bqkq")
 health = 50.0
+
+[node name="HealthBar" parent="." instance=ExtResource("2_bp2hs")]
 
 [node name="SelectionHighlight" type="Sprite2D" parent="."]
 visible = false

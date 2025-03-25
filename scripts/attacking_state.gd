@@ -1,21 +1,31 @@
-# attacking_state.gd
 class_name AttackingState
 extends State
+
+var attack_range_reached := false
 
 func enter():
 	if unit:
 		print(unit.name, " Entering AttackingState with ", unit.current_target.name if unit.current_target else "no target")
 		unit.attack_timer = 0.0
+		attack_range_reached = false
 
 func exit():
 	if unit:
-		unit.is_attacking = false
-		unit.current_target = null
+		pass  # Unit will handle combat state
 
 func physics_update(delta):
-	# Check if target still exists
-	if !unit or !unit.current_target or !is_instance_valid(unit.current_target):
-		state_transition_requested.emit("IdleState")
+	# Check if we ourselves are dying
+	if !unit or unit.is_dying:
+		return  # Don't do anything if we're dying
+	
+	# Check if target is still valid
+	if !unit.current_target or !is_instance_valid(unit.current_target):
+		unit.end_combat()
+		return
+		
+	# Check if target is dying
+	if unit.current_target is Combatant and unit.current_target.is_dying:
+		unit.end_combat()
 		return
 		
 	# Get distance to target
@@ -23,6 +33,8 @@ func physics_update(delta):
 	
 	# If we're in attack range, stop and attack
 	if distance <= unit.get_combat_range():
+		attack_range_reached = true
+		
 		# Stop movement
 		unit.velocity = Vector2.ZERO
 		
@@ -39,7 +51,17 @@ func physics_update(delta):
 		if unit.animated_sprite.animation.find("attack_") == -1:
 			unit.play_idle_animation()
 	else:
-		# Target moved out of range - pursue
+		# If target moved out of range
+		if attack_range_reached:
+			# If we were in range before but now we're not, 
+			# check if we should pursue or stop attacking
+			if unit is Enemy and unit.current_target is Unit:
+				# If target is >2x attack range away, give up and go to castle
+				if distance > unit.get_combat_range() * 2:
+					unit.end_combat()
+					return
+		
+		# Set movement toward target
 		unit.nav_agent.target_position = unit.current_target.global_position
 		
 		# Get next path position
@@ -57,10 +79,11 @@ func perform_attack():
 	if !unit or !unit.current_target or !is_instance_valid(unit.current_target):
 		return
 		
-	# Print debug info
-	print(unit.name, " attacking ", unit.current_target.name, " at distance: ", 
-		  unit.global_position.distance_to(unit.current_target.global_position))
-	
+	# Extra check to make sure target isn't dying
+	if unit.current_target is Combatant and unit.current_target.is_dying:
+		unit.end_combat()
+		return
+		
 	# Play attack animation
 	unit.play_attack_animation()
 	

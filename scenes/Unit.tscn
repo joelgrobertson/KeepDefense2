@@ -1,6 +1,7 @@
-[gd_scene load_steps=407 format=3 uid="uid://dosxxdu6vitt7"]
+[gd_scene load_steps=408 format=3 uid="uid://dosxxdu6vitt7"]
 
 [ext_resource type="Script" path="res://scripts/Unit.gd" id="1_b2d1e"]
+[ext_resource type="PackedScene" uid="uid://dvn0db884hfb3" path="res://scenes/health_bar.tscn" id="2_13bfg"]
 [ext_resource type="Texture2D" uid="uid://bqveecp4b6gus" path="res://assets/user interface/highlight/highlight_yellow.png" id="2_s73kd"]
 [ext_resource type="Texture2D" uid="uid://bg03v505iyk1b" path="res://assets/playable character/knight/knight_armed_attack/N/knight_armed_attack_N_90.0_0.png" id="3_u5me8"]
 [ext_resource type="Texture2D" uid="uid://bc72xcx101ets" path="res://assets/playable character/knight/knight_armed_attack/N/knight_armed_attack_N_90.0_1.png" id="4_bxp50"]
@@ -898,7 +899,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("138_83ldn")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_0",
 "speed": 12.0
 }, {
@@ -927,7 +928,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("146_ehjr7")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_1",
 "speed": 12.0
 }, {
@@ -956,7 +957,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("154_e541f")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_10",
 "speed": 12.0
 }, {
@@ -985,7 +986,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("162_lon4r")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_11",
 "speed": 12.0
 }, {
@@ -1014,7 +1015,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("170_fd1w3")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_12",
 "speed": 12.0
 }, {
@@ -1043,7 +1044,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("178_q8x8b")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_13",
 "speed": 12.0
 }, {
@@ -1072,7 +1073,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("186_kavdf")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_14",
 "speed": 12.0
 }, {
@@ -1101,7 +1102,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("194_fr8ek")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_15",
 "speed": 12.0
 }, {
@@ -1130,7 +1131,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("202_exxtu")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_2",
 "speed": 12.0
 }, {
@@ -1159,7 +1160,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("210_33tvm")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_3",
 "speed": 12.0
 }, {
@@ -1188,7 +1189,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("218_lb4s3")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_4",
 "speed": 12.0
 }, {
@@ -1217,7 +1218,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("226_umxym")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_5",
 "speed": 12.0
 }, {
@@ -1246,7 +1247,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("234_8ipfo")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_6",
 "speed": 12.0
 }, {
@@ -1275,7 +1276,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("242_5h3ii")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_7",
 "speed": 12.0
 }, {
@@ -1304,7 +1305,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("250_1ck2b")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_8",
 "speed": 12.0
 }, {
@@ -1333,7 +1334,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("258_0ywbf")
 }],
-"loop": true,
+"loop": false,
 "name": &"death_9",
 "speed": 12.0
 }, {
@@ -1995,6 +1996,8 @@ wall_min_slide_angle = 0.0
 script = ExtResource("1_b2d1e")
 health = 500.0
 
+[node name="HealthBar" parent="." instance=ExtResource("2_13bfg")]
+
 [node name="SelectionHighlight" type="Sprite2D" parent="."]
 visible = false
 visibility_layer = 2
@@ -2007,9 +2010,8 @@ shape = SubResource("CircleShape2D_l7tnb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gpv5l")
-animation = &"attack_4"
+animation = &"death_9"
 autoplay = "idle_8"
-frame_progress = 0.854929
 
 [node name="StateMachine" parent="." instance=ExtResource("275_12b4i")]
 

@@ -2987,5 +2987,10 @@ y_sort_enabled = true
 [node name="Unit" parent="Units" instance=ExtResource("4_3dhf8")]
 z_index = 1
 position = Vector2(164, -203)
+health = 100.0
+attack_damage = 25.0
+
+[node name="Enemy" parent="." instance=ExtResource("24_5ffa2")]
+position = Vector2(314, -378)
 
 [connection signal="formation_changed" from="UI/TopBar" to="UnitManager" method="_on_formation_selected"]
