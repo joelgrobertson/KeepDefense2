@@ -25,7 +25,7 @@ mouse_cursor/tooltip_position_offset=Vector2(53, 53)
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/codeandweb.texturepacker/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 
