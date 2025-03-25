@@ -182,6 +182,7 @@ func get_combat_range() -> float:
 	return combat_range
 
 # Start combat with a target - smoother transition
+# Start combat with a target - smoother transition
 func start_combat(target):
 	if target == null or !is_instance_valid(target) or (target is Combatant and target.is_dying):
 		return
@@ -192,6 +193,13 @@ func start_combat(target):
 	
 	# Immediately face the target
 	last_move_direction = (target.global_position - global_position).normalized()
+	
+	# Immediately start attack animation if in range
+	var distance = global_position.distance_to(target.global_position)
+	if distance <= get_combat_range():
+		# Initialize with a partial cooldown so first attack happens quickly
+		attack_timer = attack_cooldown * 0.75  # 75% of the way through cooldown
+		play_attack_animation()  # Start the attack animation immediately
 	
 	# Force state change to attacking
 	if state_machine and state_machine.current_state:

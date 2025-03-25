@@ -6,8 +6,29 @@ var attack_range_reached := false
 func enter():
 	if unit:
 		print(unit.name, " Entering AttackingState with ", unit.current_target.name if unit.current_target else "no target")
-		unit.attack_timer = 0.0
+		
+		# Start with partial cooldown for quicker first attack
+		if unit.attack_timer == 0.0:
+			unit.attack_timer = unit.attack_cooldown * 0.75
+		
 		attack_range_reached = false
+		
+		# Immediately check if we're in range and can start attacking
+		if unit.current_target and is_instance_valid(unit.current_target):
+			var distance = unit.global_position.distance_to(unit.current_target.global_position)
+			if distance <= unit.get_combat_range():
+				attack_range_reached = true
+				
+				# Face the target
+				unit.last_move_direction = (unit.current_target.global_position - unit.global_position).normalized()
+				
+				# Force an attack animation right away
+				if unit.attack_timer >= unit.attack_cooldown:
+					perform_attack()
+					unit.attack_timer = 0.0
+				else:
+					# At least play idle animation facing target
+					unit.play_idle_animation()
 
 func exit():
 	if unit:

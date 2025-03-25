@@ -5,6 +5,7 @@ position = Vector2(-11.395, -41.165)
 scale = Vector2(0.54, 0.05)
 
 [node name="HealthText" type="Label" parent="."]
+visible = false
 offset_left = 0.731482
 offset_top = -96.7
 offset_right = 62.7315

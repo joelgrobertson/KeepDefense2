@@ -2972,14 +2972,13 @@ mouse_filter = 2
 color = Color(1, 1, 1, 0.396078)
 script = ExtResource("3_168dj")
 
-[node name="Castle" parent="." instance=ExtResource("22_bmn2u")]
-position = Vector2(361, 222)
-
 [node name="EnemySpawner" type="Node2D" parent="."]
 script = ExtResource("23_487dg")
 enemy_scene = ExtResource("24_5ffa2")
-enemies_per_wave = 1
-max_enemies = 1
+max_enemies = 25
+
+[node name="Castle" parent="." instance=ExtResource("22_bmn2u")]
+position = Vector2(361, 222)
 
 [node name="Units" type="CanvasGroup" parent="."]
 y_sort_enabled = true
@@ -2987,6 +2986,24 @@ y_sort_enabled = true
 [node name="Unit" parent="Units" instance=ExtResource("4_3dhf8")]
 z_index = 1
 position = Vector2(164, -203)
+health = 100.0
+attack_damage = 25.0
+
+[node name="Unit2" parent="Units" instance=ExtResource("4_3dhf8")]
+z_index = 1
+position = Vector2(473, -202)
+health = 100.0
+attack_damage = 25.0
+
+[node name="Unit3" parent="Units" instance=ExtResource("4_3dhf8")]
+z_index = 1
+position = Vector2(162, 226)
+health = 100.0
+attack_damage = 25.0
+
+[node name="Unit4" parent="Units" instance=ExtResource("4_3dhf8")]
+z_index = 1
+position = Vector2(782, 406)
 health = 100.0
 attack_damage = 25.0
 
