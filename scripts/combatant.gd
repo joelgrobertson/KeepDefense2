@@ -53,6 +53,28 @@ func _process(delta):
 	# Handle health regeneration when not in combat
 	handle_health_regen(delta)
 	
+
+var max_attackers = 3
+var current_attackers = []
+
+func register_attacker(attacker):
+	# Return true if registered, false if rejected
+	if current_attackers.size() < max_attackers:
+		if not current_attackers.has(attacker):
+			current_attackers.append(attacker)
+			return true
+	return false
+	
+func unregister_attacker(attacker):
+	current_attackers.erase(attacker)
+	
+func clear_attackers():
+	# Notify all attackers that they need to find new targets
+	for attacker in current_attackers:
+		if is_instance_valid(attacker) and not attacker.is_dying:
+			attacker.end_combat()
+	current_attackers.clear()
+	
 func handle_health_regen(delta):
 	# Only proceed if regeneration is enabled and health is not full
 	if !can_regenerate or health >= max_health or is_attacking or is_dying:
@@ -111,50 +133,12 @@ func update_health_bar():
 
 # Handle death logic
 func handle_death():
-	print(name, " died")
-	
-	# Set dying state 
+	# Set dying state and flags immediately
 	is_dying = true
-	health_bar.visible = false
 	
-	# Disable all collisions immediately
-	$CollisionShape2D.set_deferred("disabled", true)
-	if combat_area:
-		combat_area.set_deferred("monitoring", false)
-		combat_area.set_deferred("monitorable", false)
-	
-	# Clear combat relationships
-	if current_target and is_instance_valid(current_target) and current_target is Combatant:
-		current_target.handle_target_death(self)
-	
-	# End all combat
-	current_target = null
-	is_attacking = false
-	
-	# Stop all movement and processing
-	velocity = Vector2.ZERO
-	set_process(false)
-	set_physics_process(false)
-	
-	# Play death animation
-	var anim_name = "death_%d" % calculate_direction_index(last_move_direction)
-	print("Playing death animation: ", anim_name)
-	
-	## Set animation to not loop
-	animated_sprite.animation = anim_name
-	animated_sprite.stop()  # Stop any current animation
-	animated_sprite.frame = 0  # Start from first frame
-	animated_sprite.play()  # Play the animation once
-	
-	# Wait for the animation to complete
-	await animated_sprite.animation_finished
-	
-	# Now animation is on last frame - wait a bit longer
-	var corpse_timer = get_tree().create_timer(30)  # Corpse remains for 1.5 seconds
-	await corpse_timer.timeout
-	
-	# Remove from scene
-	queue_free()
+	# Transition to death state
+	if state_machine and state_machine.current_state:
+		state_machine.current_state.state_transition_requested.emit("DeathState")
 
 # Called when a target we're fighting dies
 func handle_target_death(died_target):
@@ -205,8 +189,11 @@ func start_combat(target):
 	if state_machine and state_machine.current_state:
 		state_machine.current_state.state_transition_requested.emit("AttackingState")
 
-# End combat
 func end_combat():
+	# Unregister from target's attackers list
+	if current_target is Combatant and is_instance_valid(current_target):
+		current_target.unregister_attacker(self)
+
 	is_attacking = false
 	current_target = null
 	state_machine.current_state.state_transition_requested.emit("IdleState")

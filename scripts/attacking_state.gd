@@ -5,6 +5,19 @@ var attack_range_reached := false
 
 func enter():
 	if unit:
+		# Check if target already has too many attackers
+		if unit.current_target is Combatant:
+			if not unit.current_target.register_attacker(unit):
+				# Target has too many attackers, find another target
+				var alternative_target = find_alternative_target()
+				if alternative_target:
+					unit.current_target = alternative_target
+					unit.current_target.register_attacker(unit)
+				else:
+					# No alternative, go back to previous state
+					state_transition_requested.emit("IdleState")
+					return
+					
 		print(unit.name, " Entering AttackingState with ", unit.current_target.name if unit.current_target else "no target")
 		
 		# Start with partial cooldown for quicker first attack
@@ -29,6 +42,21 @@ func enter():
 				else:
 					# At least play idle animation facing target
 					unit.play_idle_animation()
+					
+func find_alternative_target():
+	# Find enemies with fewer than max attackers nearby
+	var enemies = get_tree().get_nodes_in_group("enemies")
+	var closest_available = null
+	var closest_distance = 300.0  # Max search distance
+	
+	for enemy in enemies:
+		if is_instance_valid(enemy) and not enemy.is_dying and enemy.current_attackers.size() < enemy.max_attackers:
+			var distance = unit.global_position.distance_to(enemy.global_position)
+			if distance < closest_distance:
+				closest_available = enemy
+				closest_distance = distance
+				
+	return closest_available
 
 func exit():
 	if unit:

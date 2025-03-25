@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dl6recigflrik"]
+[gd_scene load_steps=7 format=3 uid="uid://dl6recigflrik"]
 
 [ext_resource type="Script" path="res://scripts/state_machine.gd" id="1_nifcw"]
 [ext_resource type="Script" path="res://scripts/idle_state.gd" id="2_b257q"]
 [ext_resource type="Script" path="res://scripts/moving_state.gd" id="3_dnohn"]
 [ext_resource type="Script" path="res://scripts/attacking_state.gd" id="4_ubanm"]
 [ext_resource type="Script" path="res://scripts/retreating_state.gd" id="5_bpoh8"]
+[ext_resource type="Script" path="res://scripts/DeathState.gd" id="6_nilsl"]
 
 [node name="StateMachine" type="Node" node_paths=PackedStringArray("initial_state")]
 script = ExtResource("1_nifcw")
@@ -21,3 +22,6 @@ script = ExtResource("4_ubanm")
 
 [node name="RetreatingState" type="Node" parent="."]
 script = ExtResource("5_bpoh8")
+
+[node name="DeathState" type="Node" parent="."]
+script = ExtResource("6_nilsl")

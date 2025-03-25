@@ -2986,13 +2986,11 @@ y_sort_enabled = true
 [node name="Unit" parent="Units" instance=ExtResource("4_3dhf8")]
 z_index = 1
 position = Vector2(164, -203)
-health = 100.0
 attack_damage = 25.0
 
 [node name="Unit2" parent="Units" instance=ExtResource("4_3dhf8")]
 z_index = 1
 position = Vector2(473, -202)
-health = 100.0
 attack_damage = 25.0
 
 [node name="Unit3" parent="Units" instance=ExtResource("4_3dhf8")]
