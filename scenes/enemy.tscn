@@ -406,7 +406,7 @@
 [ext_resource type="Texture2D" uid="uid://u3ulx8o056kj" path="res://assets/enemy/skeleton/skeleton_default_walk/SSW/skeleton_default_walk_SSW_247.5_7.png" id="275_rbeuq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l7tnb"]
-radius = 16.2423
+radius = 8.58287
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_thju6"]
 animations = [{
@@ -1957,7 +1957,7 @@ shape = SubResource("CircleShape2D_l7tnb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_thju6")
-animation = &"death_9"
+animation = &"death_0"
 autoplay = "idle_8"
 
 [node name="StateMachine" parent="." instance=ExtResource("275_byd13")]

@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var attack_damage := 10.0
 @export var attack_cooldown := 1.0
 @export var speed := 80.0
-@export var combat_range := 50.0  # Attacking distance
+@export var combat_range := 40.0  # Attacking distance
 
 # Health regeneration properties
 @export var can_regenerate := false  # Set to true only for units

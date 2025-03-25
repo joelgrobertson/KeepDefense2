@@ -406,7 +406,7 @@
 [ext_resource type="Texture2D" uid="uid://bv8l5wxmjq235" path="res://assets/playable character/knight/knight_armed_walk/9_SSW/knight_armed_walk_SSW_247.5_7.png" id="402_22sl7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l7tnb"]
-radius = 25.7486
+radius = 14.339
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gpv5l"]
 animations = [{
