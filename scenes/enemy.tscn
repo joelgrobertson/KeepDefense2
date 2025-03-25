@@ -1,6 +1,6 @@
 [gd_scene load_steps=408 format=3 uid="uid://c215q824vywyy"]
 
-[ext_resource type="Script" path="res://scripts/Enemy.gd" id="1_5bqkq"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_gw4ec"]
 [ext_resource type="PackedScene" uid="uid://dvn0db884hfb3" path="res://scenes/health_bar.tscn" id="2_bp2hs"]
 [ext_resource type="Texture2D" uid="uid://bqveecp4b6gus" path="res://assets/user interface/highlight/highlight_yellow.png" id="2_nx5xm"]
 [ext_resource type="Texture2D" uid="uid://chwvgcek08jvx" path="res://assets/enemy/skeleton/skeleton_default_attack/N/skeleton_default_attack_N_90.0_0.png" id="4_4qv7w"]
@@ -1940,8 +1940,7 @@ collision_layer = 2
 collision_mask = 15
 motion_mode = 1
 wall_min_slide_angle = 0.0
-script = ExtResource("1_5bqkq")
-health = 50.0
+script = ExtResource("1_gw4ec")
 
 [node name="HealthBar" parent="." instance=ExtResource("2_bp2hs")]
 
