@@ -7,4 +7,3 @@
 script = ExtResource("1_2exsj")
 enemy_scene = ExtResource("2_uxt0w")
 enemies_per_wave = 1
-max_enemies = 1

@@ -13,6 +13,7 @@ var is_attacking := false
 var last_move_direction := Vector2.DOWN
 var current_animation := ""
 var attack_timer := 0.0
+var in_combat_movement := false
 
 # References
 @onready var animated_sprite = $AnimatedSprite2D
@@ -55,7 +56,29 @@ func start_combat(target):
 		if state_machine:
 			state_machine.current_state.state_transition_requested.emit("AttackingState")
 
-# Navigation callback
+# Configure collision for combat
+func configure_collision_for_combat(enable: bool):
+	if enable:
+		# During combat, ignore collisions with other units/enemies
+		# This prevents pushing and jiggling
+		collision_mask = collision_mask & ~2  # Remove bit 2 (unit/enemy collision layer)
+	else:
+		# Normal movement - detect all collisions
+		collision_mask = collision_mask | 2   # Add back bit 2
+		
+		
+func configure_navigation_for_combat(enable: bool):
+	in_combat_movement = enable
+	
+	if enable:
+		# Configure for combat - disable avoidance
+		nav_agent.avoidance_enabled = false
+		nav_agent.radius = 2.0  # Smaller radius during combat
+	else:
+		# Configure for normal movement - enable avoidance
+		nav_agent.avoidance_enabled = true
+		nav_agent.radius = 12.0  # Normal radius
+		
 func _on_velocity_computed(safe_velocity: Vector2):
 	velocity = safe_velocity
 	move_and_slide()

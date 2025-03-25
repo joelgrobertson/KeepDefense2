@@ -2978,7 +2978,8 @@ position = Vector2(361, 222)
 [node name="EnemySpawner" type="Node2D" parent="."]
 script = ExtResource("23_487dg")
 enemy_scene = ExtResource("24_5ffa2")
-max_enemies = 10
+enemies_per_wave = 1
+max_enemies = 1
 
 [node name="Units" type="CanvasGroup" parent="."]
 y_sort_enabled = true
@@ -2986,17 +2987,5 @@ y_sort_enabled = true
 [node name="Unit" parent="Units" instance=ExtResource("4_3dhf8")]
 z_index = 1
 position = Vector2(164, -203)
-
-[node name="Unit2" parent="Units" instance=ExtResource("4_3dhf8")]
-z_index = 1
-position = Vector2(-238, 144)
-
-[node name="Unit3" parent="Units" instance=ExtResource("4_3dhf8")]
-z_index = 1
-position = Vector2(667, 53)
-
-[node name="Unit4" parent="Units" instance=ExtResource("4_3dhf8")]
-z_index = 1
-position = Vector2(503, 241)
 
 [connection signal="formation_changed" from="UI/TopBar" to="UnitManager" method="_on_formation_selected"]

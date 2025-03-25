@@ -27,5 +27,11 @@ func _on_state_transition(new_state_name: String):
 	if new_state and new_state is State:
 		if current_state:
 			current_state.exit()
+			
+			# If the owner is a Combatant, ensure velocity is reset
+			var owner_node = owner.get_parent()
+			if owner_node is Combatant:
+				owner_node.velocity = Vector2.ZERO
+				
 		current_state = new_state
 		current_state.enter()

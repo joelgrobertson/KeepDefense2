@@ -1988,6 +1988,7 @@ radius = 50.0
 
 [node name="Unit" type="CharacterBody2D" groups=["units"]]
 y_sort_enabled = true
+collision_layer = 2
 collision_mask = 15
 motion_mode = 1
 wall_min_slide_angle = 0.0
